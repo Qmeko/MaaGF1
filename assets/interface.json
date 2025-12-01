@@ -1,8 +1,8 @@
 {
     "$schema": "http://json-schema.org/draft-07/schema#",
     "name": "MaaGF1",
-    "version": "v1.6",
-    "url": "https://github.com/MaaGF1/MaaGF1",
+    "version": "v1.7.13",
+    "url": "https://github.com/LeonNagant/MaaGF1_Test",
     "mirrorchyan_rid": null,
     "mirrorchyan_multiplatform": false,
     "custom_title": "MaaGF1",
@@ -12,10 +12,9 @@
             "type": "Win32",
             "win32": {
                 "class_regex": ".*",
-                "window_regex": "(?i)(少女前线|GIRLS[\\s']*FRONTLINE)",
+                "window_regex": "少女前线",
                 "screencap": 16,
-                "mouse": 1,
-                "keyboard": 1
+                "mouse": 1
             }
         },
         {
@@ -43,7 +42,7 @@
             "name": "13-4循环",
             "entry": "!134总流程",
             "check": false,
-            "doc": "请在第十三战役-普通界面或者进入13-4地图后的界面运行， **要求地图缩放到最小** ，[点击这里浏览器打开操作手册](https://github.com/MaaGF1/docs)",
+            "doc": "请在第十三战役-普通界面或者进入13-4地图后的界面运行， **要求地图缩放到最小** ，[点击这里浏览器打开操作手册](https://github.com/LeonNagant/MaaGF1_Test/blob/main/manual/13-4%E5%8F%8C%E6%89%93%E6%89%8B%E6%8B%96%E5%B0%B8%E4%BD%BF%E7%94%A8%E6%89%8B%E5%86%8C.md)",
             "repeatable": true,
             "repeat_count": 1,
             "option": [
@@ -65,7 +64,7 @@
             "name": "8-1N循环",
             "entry": "!81N总流程",
             "check": false,
-            "doc": "请在第八战役-夜战或者进入8-1N地图后的界面运行， **要求地图缩放到最小** ，[点击这里浏览器打开操作手册](https://github.com/MaaGF1/docs)",
+            "doc": "请在第八战役-夜战或者进入8-1N地图后的界面运行， **要求地图缩放到最小** ，[点击这里浏览器打开操作手册](https://github.com/LeonNagant/MaaGF1_Test/blob/main/manual/8-1N%E5%8F%8C%E6%89%93%E6%89%8B%E7%82%B8%E7%8B%97%E4%BD%BF%E7%94%A8%E6%89%8B%E5%86%8C.md)",
             "repeatable": true,
             "repeat_count": 1,
             "option": [
@@ -92,7 +91,7 @@
             "name": "跑步机",
             "entry": "!跑步机总流程",
             "check": false,
-            "doc": " **要求地图缩放到最小** ，[点击这里浏览器打开操作手册](https://github.com/MaaGF1/docs)",
+            "doc": " **要求地图缩放到最小** ，[点击这里浏览器打开操作手册](https://github.com/LeonNagant/MaaGF1_Test/blob/main/manual/%E8%B7%91%E6%AD%A5%E6%9C%BA%E4%BD%BF%E7%94%A8%E6%89%8B%E5%86%8C.md)",
             "option": [
                 "跑步机修复选择"
             ],
@@ -103,7 +102,7 @@
             "name": "灰域探查",
             "entry": "!开始打灰",
             "check": false,
-            "doc": "在主界面或者刚进入灰域界面执行，[点击这里浏览器打开操作手册](https://github.com/MaaGF1/docs)",
+            "doc": "在主界面或者刚进入灰域界面执行，[点击这里浏览器打开操作手册](https://github.com/LeonNagant/MaaGF1_Test/blob/main/manual/%E8%87%AA%E5%8A%A8%E6%89%93%E7%81%B0%E5%A5%96%E5%8A%B1%E5%85%B3%E4%BD%BF%E7%94%A8%E6%89%8B%E5%86%8C.md)",
             "option": [
                 "打灰选择",
                 "打灰地图选择",
@@ -117,7 +116,7 @@
             "name": "基地-兵棋挂机",
             "entry": "=兵棋总流程",
             "check": false,
-            "doc": "请在咖啡馆点击兵棋桌后或兵棋房间内运行，[点击这里浏览器打开操作手册](https://github.com/MaaGF1/docs)",
+            "doc": "请在咖啡馆点击兵棋桌后或兵棋房间内运行，[点击这里浏览器打开操作手册](https://github.com/LeonNagant/MaaGF1_Test/blob/main/manual/%E5%85%B5%E6%A3%8B%E8%87%AA%E5%8A%A8%E6%8C%82%E6%9C%BA%E4%BD%BF%E7%94%A8%E6%89%8B%E5%86%8C.md)",
             "repeatable": true,
             "repeat_count": 1
         },
@@ -136,7 +135,7 @@
             "name": "裂变链接捡垃圾",
             "entry": "!裂变链接捡垃圾",
             "check": false,
-            "doc": "⚠️打开记录缩放，将地图缩放至最小并拉从最左下向右上拉至地图边缘后手动运行一次再开始脚本[点击这里浏览器打开操作手册](https://github.com/MaaGF1/docs)",
+            "doc": "⚠️打开记录缩放，将地图缩放至最小并拉从最左下向右上拉至地图边缘后手动运行一次再开始脚本[点击这里浏览器打开操作手册](https://github.com/LeonNagant/MaaGF1_Test/blob/main/manual/%E6%8D%A1%E5%9E%83%E5%9C%BE%E4%BD%BF%E7%94%A8%E6%89%8B%E5%86%8C.md)",
             "option": [
                 "部署梯队选择"
             ],
@@ -161,7 +160,7 @@
             "name": "指挥官后勤",
             "entry": "!指挥官后勤",
             "check": false,
-            "doc": "⚠️打开记录缩放，将地图缩放至最小并拉从最左下向右上拉至地图边缘后手动运行一次再开始脚本[点击这里浏览器打开操作手册](https://github.com/MaaGF1/docs)",
+            "doc": "⚠️打开记录缩放，将地图缩放至最小并拉从最左下向右上拉至地图边缘后手动运行一次再开始脚本[点击这里浏览器打开操作手册](https://github.com/isla23/MaaGF1_Test/blob/main/manual/%E6%8C%87%E6%8C%A5%E5%AE%98%E5%90%8E%E5%8B%A4%E4%BD%BF%E7%94%A8%E6%89%8B%E5%86%8C.md)",
             "option": [
                 "部署梯队选择"
             ],
@@ -175,7 +174,7 @@
             "name": "0元购",
             "entry": "!莫比乌斯带上的逃亡",
             "check": false,
-            "doc": "⚠️在主界面 或 常驻活动-卷积核界面运行[点击这里浏览器打开操作手册](https://github.com/MaaGF1/docs)",
+            "doc": "⚠️在主界面 或 常驻活动-卷积核界面运行[点击这里浏览器打开操作手册](https://github.com/MaaGF1/MaaGF1/blob/main/manual/0%E5%85%83%E8%B4%AD%E7%89%A9%E4%BD%BF%E7%94%A8%E6%89%8B%E5%86%8C.md)",
             "option": [
                 "0元购关卡"
             ],
@@ -186,7 +185,7 @@
             "name": "打捞-人形",
             "entry": "!常驻人形打捞",
             "check": false,
-            "doc": "[点击这里浏览器打开操作手册](https://github.com/MaaGF1/docs)",
+            "doc": "[点击这里浏览器打开操作手册](https://github.com/LeonNagant/MaaGF1_Test/blob/main/manual/%E6%89%93%E6%8D%9E%E4%BD%BF%E7%94%A8%E6%89%8B%E5%86%8C.md)",
             "option": [
                 "选择常驻人形打捞目标"
             ],
@@ -197,7 +196,7 @@
             "name": "打捞-装备",
             "entry": "!夜战打捞",
             "check": false,
-            "doc": "在夜战地图运行，[点击这里浏览器打开操作手册](https://github.com/MaaGF1/docs)",
+            "doc": "在夜战地图运行，[点击这里浏览器打开操作手册](https://github.com/LeonNagant/MaaGF1_Test/blob/main/manual/%E5%A4%9C%E6%88%98%E6%89%93%E6%8D%9E%E4%BD%BF%E7%94%A8%E6%89%8B%E5%86%8C.md)",
             "option": [
                 "选择夜战打捞地图"
             ]
@@ -246,7 +245,7 @@
             "name": "Farm-炼金",
             "entry": "!Alchemy_Entry",
             "check": false,
-            "doc": "静默沙盘：[点击这里浏览器打开操作手册](https://github.com/MaaGF1/docs)\n向你微笑(先辈)通关任意难度向你微笑，将地图缩放至最小即可开启运行，自动部署的梯队须为铁血梯队。\n向你微笑(DLZC)通关任意难度向你微笑，地图缩放到最小，拖动到右下角边缘开始",
+            "doc": "静默沙盘：[点击这里浏览器打开操作手册](https://github.com/LeonNagant/MaaGF1_Test/blob/main/manual/%E9%9D%99%E9%BB%98%E6%B2%99%E7%9B%98%E5%88%B7%E8%B5%84%E6%BA%90.md)\n向你微笑(先辈)通关任意难度向你微笑，将地图缩放至最小即可开启运行，自动部署的梯队须为铁血梯队。\n向你微笑(DLZC)通关任意难度向你微笑，地图缩放到最小，拖动到右下角边缘开始",
             "option": [
                 "Alchemy_Task_List"
             ],
@@ -276,11 +275,13 @@
         },
         {
             "name": "循演EX打捞",
-            "entry": "循演_开始作战",
-            "doc": "选择打捞关卡和路线，固定`第一队为打捞队`，将地图缩放最小、`所有点位不要被遮挡`即可，在对应路线横向右边机场上部署后再运行脚本",
+            "entry": "循演_启动",
+            "doc": "选择打捞关卡和路线，固定`第一队为打捞队`，将地图缩放最小、`所有点位不要被遮挡`即可，在对应路线横向右边机场上部署后再运行脚本,手动校准：缩到最小按住从右往左拉，然后上下调整使得左上角蓝毛铁血脑袋顶到X",
             "option": [
                 "循演EX选择打捞关卡",
-                "循演EX选择打捞路线{横排从上往下}"
+                "循演EX选择打捞路线{横排从上往下}",
+                "循演EX是否启用结算加速",
+                "循演EX是否手动校准"
             ],
             "repeatable": true,
             "repeat_count": 9999
@@ -1223,6 +1224,52 @@
                             "expected": "6"
                         }
                     }
+                }
+            ]
+        },
+        "循演EX是否启用结算加速": {
+            "cases": [
+                {
+                    "name": "启用结算加速",
+                    "pipeline_override": {
+                        "循演_执行计划": {
+                            "interrupt": [
+                                "public_不中断计划",
+                                "public_加速结算进入"
+                            ]
+                        },
+                        "public_加速后等待": {
+                            "post_delay": 9000
+                        }
+                    }
+                },
+                {
+                    "name": "关闭结算加速",
+                    "pipeline_override": {
+                        "循演_执行计划": {
+                            "post_delay": 8000,
+		                    "timeout": 150000,
+		                    "rate_limit": 2000,
+		                    "interrupt": [
+		                    ]
+                        }
+                    }
+                }
+            ]
+        },
+        "循演EX是否手动校准": {
+            "cases": [
+                {
+                    "name": "手动校准",
+                    "pipeline_override": {
+                        "循演_部署": {
+		                    "target": [852, 223, 20, 21],
+		                    "target_offset": [0, 0, 0, 0]
+                        }
+                    }
+                },
+                {
+                    "name": "自动校准"
                 }
             ]
         },
