@@ -278,7 +278,7 @@
 			"静默沙盘炼金_战斗阶段_计划模式_1_Begin"
 		]
 	},
- // 第一轮战斗 Begin
+	// 第一轮战斗 Begin
 	"静默沙盘炼金_战斗阶段_计划模式_1_Begin": {
 		"recognition": "DirectHit",
 		"action": "LongPress",
@@ -290,7 +290,7 @@
 			"静默沙盘炼金_战斗阶段_计划模式_1_点击计划_Begin"
 		]
 	},
- /// 计划模式 Begin
+	/// 计划模式 Begin
 	"静默沙盘炼金_战斗阶段_计划模式_1_点击计划_Begin": {
 		"recognition": "DirectHit",
 		"action": "LongPress",
@@ -334,8 +334,8 @@
 			"静默沙盘炼金_战斗阶段_计划模式_1_点击计划_Begin"
 		]
 	},
- /// 计划模式 End
- /// 梯队R Begin
+	/// 计划模式 End
+	/// 梯队R Begin
 	"静默沙盘炼金_战斗阶段_计划模式_1_铁血_R_点击梯队": {
 		"recognition": "DirectHit",
 		"action": "LongPress",
@@ -369,8 +369,8 @@
 			"静默沙盘炼金_战斗阶段_计划模式_1_铁血_L_点击梯队"
 		]
 	},
- /// 梯队R End
- /// 梯队L Begin
+	/// 梯队R End
+	/// 梯队L Begin
 	"静默沙盘炼金_战斗阶段_计划模式_1_铁血_L_点击梯队": {
 		"recognition": "DirectHit",
 		"action": "LongPress",
@@ -549,7 +549,7 @@
 			"静默沙盘炼金_战斗阶段_计划模式_1_继续循环"
 		]
 	},
- // if 剩余回合 == 5，则进行计划
+	// if 剩余回合 == 5，则进行计划
 	"静默沙盘炼金_战斗阶段_计划模式_1_检查回合5": {
 		"recognition": "TemplateMatch",
 		"template": "./sandbox_resource/04_end5_cropped.png",
@@ -563,7 +563,7 @@
 			"静默沙盘炼金_战斗阶段_计划模式_1_执行计划"
 		]
 	},
- // else 剩余回合 != 5，重新执行计划模式
+	// else 剩余回合 != 5，重新执行计划模式
 	"静默沙盘炼金_战斗阶段_计划模式_1_继续循环": {
 		"recognition": "DirectHit",
 		"action": "DoNothing",
@@ -595,7 +595,7 @@
 			"静默沙盘炼金_战斗阶段_指挥官_制造补给_判断"
 		]
 	},
- // 第一轮战斗 第一轮战斗End
+	// 第一轮战斗 第一轮战斗End
 	"静默沙盘炼金_战斗阶段_指挥官_制造补给_判断": {
 		"recognition": "TemplateMatch",
 		"template": "./sandbox_resource/05_create_cropped.png",
@@ -622,7 +622,7 @@
 			"静默沙盘炼金_战斗阶段_计划模式_2_Begin"
 		]
 	},
- // 第二轮战斗 Begin
+	// 第二轮战斗 Begin
 	"静默沙盘炼金_战斗阶段_计划模式_2_Begin": {
 		"recognition": "DirectHit",
 		"action": "LongPress",
@@ -634,7 +634,7 @@
 			"静默沙盘炼金_战斗阶段_计划模式_2_点击计划_Begin"
 		]
 	},
- /// 计划模式 Begin
+	/// 计划模式 Begin
 	"静默沙盘炼金_战斗阶段_计划模式_2_点击计划_Begin": {
 		"recognition": "DirectHit",
 		"action": "LongPress",
@@ -678,7 +678,7 @@
 			"静默沙盘炼金_战斗阶段_计划模式_2_点击计划_Begin"
 		]
 	},
- /// 计划模式 End
+	/// 计划模式 End
 	"静默沙盘炼金_战斗阶段_计划模式_2_指挥官_点击梯队": {
 		"recognition": "DirectHit",
 		"action": "LongPress",
@@ -741,7 +741,7 @@
 			"静默沙盘炼金_战斗阶段_计划模式_2_继续循环"
 		]
 	},
- // if 剩余回合 == 2，则进行计划
+	// if 剩余回合 == 2，则进行计划
 	"静默沙盘炼金_战斗阶段_计划模式_2_检查回合2": {
 		"recognition": "TemplateMatch",
 		"template": "./sandbox_resource/04_end2_cropped.png",
@@ -755,7 +755,7 @@
 			"静默沙盘炼金_战斗阶段_计划模式_2_执行计划"
 		]
 	},
- // else if 剩余回合 == 5，取消计划模式 && 重新执行计划模式
+	// else if 剩余回合 == 5，取消计划模式 && 重新执行计划模式
 	"静默沙盘炼金_战斗阶段_计划模式_2_检查回合5": {
 		"recognition": "TemplateMatch",
 		"template": "./sandbox_resource/04_end5_cropped.png",
@@ -771,7 +771,7 @@
 			"静默沙盘炼金_战斗阶段_计划模式_2_Begin"
 		]
 	},
- // else 剩余回合 != 2 && != 5，重新执行计划模式
+	// else 剩余回合 != 2 && != 5，重新执行计划模式
 	"静默沙盘炼金_战斗阶段_计划模式_2_继续循环": {
 		"recognition": "DirectHit",
 		"action": "DoNothing",
@@ -803,8 +803,8 @@
 			"静默沙盘炼金_战斗阶段_指挥官_执行补给_铁血R_Begin"
 		]
 	},
- // 第二轮战斗 End
- // 补给铁血 R Begin
+	// 第二轮战斗 End
+	// 补给铁血 R Begin
 	"静默沙盘炼金_战斗阶段_指挥官_执行补给_铁血R_Begin": {
 		"recognition": "DirectHit",
 		"action": "DoNothing",
@@ -866,7 +866,7 @@
 			"静默沙盘炼金_战斗阶段_指挥官_执行补给_铁血R_重新补给"
 		]
 	},
- // if 右侧（1梯队）补给成功，则开始补给左侧梯队
+	// if 右侧（1梯队）补给成功，则开始补给左侧梯队
 	"静默沙盘炼金_战斗阶段_指挥官_执行补给_铁血R_检查补给状态": {
 		"recognition": "TemplateMatch",
 		"template": "./sandbox_resource/07_point_1_cropped.png",
@@ -880,7 +880,7 @@
 			"静默沙盘炼金_战斗阶段_指挥官_执行补给_铁血L_Begin"
 		]
 	},
- // else 重新执行右侧补给逻辑
+	// else 重新执行右侧补给逻辑
 	"静默沙盘炼金_战斗阶段_指挥官_执行补给_铁血R_重新补给": {
 		"recognition": "DirectHit",
 		"action": "DoNothing",
@@ -890,8 +890,8 @@
 			"静默沙盘炼金_战斗阶段_指挥官_执行补给_铁血R_Begin"
 		]
 	},
- // 补给铁血 R End
- // 补给铁血 L Begin
+	// 补给铁血 R End
+	// 补给铁血 L Begin
 	"静默沙盘炼金_战斗阶段_指挥官_执行补给_铁血L_Begin": {
 		"recognition": "DirectHit",
 		"action": "DoNothing",
@@ -953,7 +953,7 @@
 			"静默沙盘炼金_战斗阶段_指挥官_执行补给_铁血L_重新补给"
 		]
 	},
- // if 左侧（2梯队）补给成功，尝试结算
+	// if 左侧（2梯队）补给成功，尝试结算
 	"静默沙盘炼金_战斗阶段_指挥官_执行补给_铁血L_检查补给状态": {
 		"recognition": "TemplateMatch",
 		"template": "./sandbox_resource/07_point_2_cropped.png",
@@ -967,7 +967,7 @@
 			"静默沙盘炼金_结算_点击战役结算"
 		]
 	},
- // else 重新执行右侧补给逻辑
+	// else 重新执行右侧补给逻辑
 	"静默沙盘炼金_战斗阶段_指挥官_执行补给_铁血L_重新补给": {
 		"recognition": "DirectHit",
 		"action": "DoNothing",
@@ -977,7 +977,7 @@
 			"静默沙盘炼金_战斗阶段_指挥官_执行补给_铁血L_Begin"
 		]
 	},
- // 补给铁血 L End
+	// 补给铁血 L End
 	"静默沙盘炼金_结算_点击战役结算": {
 		"recognition": "DirectHit",
 		"action": "LongPress",
@@ -1078,7 +1078,7 @@
 		"post_delay": 50,
 		"next": [
 			"静默沙盘炼金_剧情对话_Loop",
-            "静默沙盘炼金_作战开始",
+			"静默沙盘炼金_作战开始",
 			"静默沙盘炼金_再次作战_1",
 			"静默沙盘炼金_再次作战_8"
 		]
@@ -1093,8 +1093,8 @@
 		"target": [366, 610, 100, 27],
 		"next": [
 			"静默沙盘炼金_再次作战_1",
-            "静默沙盘炼金_剧情对话_Loop",
-            "静默沙盘炼金_作战开始",
+			"静默沙盘炼金_剧情对话_Loop",
+			"静默沙盘炼金_作战开始",
 			"静默沙盘炼金_输出日志"
 		]
 	},

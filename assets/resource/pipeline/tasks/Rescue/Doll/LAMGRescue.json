@@ -1,7 +1,5 @@
 {
-	"!LAMG打捞": {
-		"next": "LAMG打捞_开始作战"
-	},
+	"!LAMG打捞": {"next": "LAMG打捞_开始作战"},
 	"LAMG打捞_开始作战": {
 		"recognition": "OCR",
 		"roi": [1037, 621, 94, 47],
