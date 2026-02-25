@@ -7,7 +7,7 @@ import time
 
 def on_message(message, data):
     """
-    Receive control flow hijacking reports from the JS.
+    接收来自 JS 层面的控制流劫持汇报
     """
     if message['type'] == 'send':
         payload = message.get('payload', {})
