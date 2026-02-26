@@ -1,0 +1,107 @@
+{
+	"dh_": {},
+	"dh_初始化": {
+		"recognition": "DirectHit",
+		"max_hit": 1,
+		"next": [
+			"dh_记录参数"
+		]
+	},
+	"dh_记录参数": {
+		"recognition": "DirectHit",
+		"action": "Custom",
+		"custom_action": "matlab_calculate",
+		"custom_action_param": {
+			"syntax": "Start_Time = _get_time; T = 30"
+		},
+		"post_delay": 1,
+		"next": [
+			"dh_主界面点击战斗",
+			"[JumpBack]ESC"
+		]
+	},
+	"dh_主界面点击战斗": {
+		"recognition": "OCR",
+		"roi": [904, 387, 124, 65],
+		"expected": "COMBAT",
+		"action": "LongPress",
+		"duration": 13,
+		"post_delay": 2500,
+		"next": [
+			"dh_MISSION",
+			"dh_主界面点击战斗"
+		]
+	},
+	"dh_MISSION": {
+		"recognition": "OCR",
+		"roi": [56, 101, 123, 619],
+		"expected": "MISSION",
+		"action": "LongPress",
+		"duration": 13,
+		"post_delay": 1300,
+		"next": [
+			"dh_识别mission",
+			"dh_MISSION"
+		]
+	},
+	"dh_CAMPAIGN": {
+		"recognition": "OCR",
+		"roi": [56, 101, 123, 619],
+		"expected": "CAMPAIGN",
+		"action": "LongPress",
+		"duration": 13,
+		"post_delay": 1300,
+		"next": [
+			"dh_识别campaign",
+			"dh_CAMPAIGN"
+		]
+	},
+	"dh_活动": {
+		"recognition": "OCR",
+		"roi": [0, 0, 0, 0],
+		"expected": ["1"],
+		"action": "LongPress",
+		"duration": 13,
+		"next": []
+	},
+	"dh_识别mission": {
+		"recognition": "OCR",
+		"roi": [922, 114, 126, 26],
+		"expected": "DIFFICULTY",
+		"post_delay": 1000,
+		"next": [
+			"dh_选择关卡",
+			"[JumpBack]dh_未识别到关卡尝试滑动菜单"
+		]
+	},
+	"dh_识别campaign": {
+		"recognition": "OCR",
+		"roi": [1022, 106, 70, 23],
+		"expected": "SELECT",
+		"post_delay": 1000,
+		"next": [
+			"dh_选择关卡",
+			"[JumpBack]dh_未识别到关卡尝试滑动菜单"
+		]
+	},
+	"dh_选择关卡": {
+		"recognition": "OCR",
+		"roi": [184, 98, 191, 622],
+		"expected": ["13.75"],
+		"action": "LongPress",
+		"duration": 13,
+		"repeat":2,
+		"post_delay": 1000,
+		"next": []
+	},
+	"dh_未识别到关卡尝试滑动菜单": {
+		"recognition": "DirectHit",
+		"action": "Swipe",
+		"begin": [317, 595, 1, 1],
+		"end": [317, 315, 1, 1],
+		"duration": 200,
+		"end_hold": 200,
+		"post_delay": 1500,
+		"next": []
+	}
+}
