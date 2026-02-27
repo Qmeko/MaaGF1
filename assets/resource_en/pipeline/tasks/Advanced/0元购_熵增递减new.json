@@ -117,7 +117,7 @@
 		"action": "LongPress",
 		"target": [553, 482, 17, 18],
 		"duration": 15,
-		"post_delay": 500,
+		"post_delay": 800,
 		"next": [
 			"sz_执行计划"
 		]
@@ -128,15 +128,12 @@
 		"expected": ["EXE", "CUTE"],
 		"action": "LongPress",
 		"duration": 15,
-		"post_delay": 5000,
+		"post_delay": 10000,
 		"rate_limit": 2000,
 		"timeout": 40000,
 		"next": [
 			"sz_结束回合1",
 			"sz_执行计划"
-		],
-		"on_error": [
-			"sz_点击计划模式"
 		]
 	},
 	"sz_结束回合1": {
