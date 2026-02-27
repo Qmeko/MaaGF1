@@ -16,7 +16,7 @@
 	},
 	"重置参数": {
 		"recognition": "OCR",
-		"roi" : [906,401,149,59],
+		"roi": [906, 401, 149, 59],
 		"expected": "COMBAT",
 		"action": "Custom",
 		"custom_action": "matlab_calculate",

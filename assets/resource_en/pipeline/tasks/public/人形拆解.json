@@ -53,11 +53,12 @@
 	},
 	"rxcj2_再次确定": {
 		"recognition": "OCR",
-		"roi": [712, 557, 166, 143],"expected" : "OK",
+		"roi": [712, 557, 166, 143],
+		"expected": "OK",
 		"action": "LongPress",
 		"duration": 13,
 		"post_delay": 400,
-		"next":[]
+		"next": []
 	},
 	"rxcj2_": {},
 	"rxcj2_识别拆解人形": {

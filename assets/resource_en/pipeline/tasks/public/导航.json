@@ -90,7 +90,7 @@
 		"expected": ["13.75"],
 		"action": "LongPress",
 		"duration": 13,
-		"repeat":2,
+		"repeat": 2,
 		"post_delay": 1000,
 		"next": []
 	},
