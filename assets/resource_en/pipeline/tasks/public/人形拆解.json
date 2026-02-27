@@ -1,28 +1,5 @@
 {
-	"!返回主界面_拆解": {
-		"focus": {"Node.Recognition.Succeeded": "仓位快满，返回主界面拆解"},
-		"rate_limit": 2000,
-		"post_delay": 2000,
-		"next": [
-			"桌面点击工厂",
-			"[JumpBack]后勤",
-			"[JumpBack]返回主界面_ESC"
-		]
-	},
 	"rxcj_": {},
-	"rxcj_桌面点击工厂": {
-		"recognition": "OCR",
-		"roi": [1073, 261, 135, 55],
-		"expected": "FA",
-		"action": "LongPress",
-		"duration": 10,
-		"post_delay": 2000,
-		"next": [
-			"选择回收人形",
-			"[JumpBack]后勤",
-			"桌面点击工厂"
-		]
-	},
 	"rxcj_识别拆解弹窗": {
 		"recognition": "OCR",
 		"roi": [631, 309, 81, 40],
@@ -60,7 +37,7 @@
 	},
 	"rxcj_拆解": {
 		"recognition": "OCR",
-		"roi": [1062, 201, 109, 39],
+		"roi": [1060, 188, 131, 87],
 		"expected": "Manpower",
 		"action": "LongPress",
 		"duration": 15,
@@ -69,8 +46,18 @@
 		"repeat": 2,
 		"timeout": 60000,
 		"next": [
+			"[JumpBack]rxcj2_再次确定",
+			"rxcj_拆解",
 			"rxcj2_识别拆解人形"
 		]
+	},
+	"rxcj2_再次确定": {
+		"recognition": "OCR",
+		"roi": [712, 557, 166, 143],"expected" : "OK",
+		"action": "LongPress",
+		"duration": 13,
+		"post_delay": 400,
+		"next":[]
 	},
 	"rxcj2_": {},
 	"rxcj2_识别拆解人形": {

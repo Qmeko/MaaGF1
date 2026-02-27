@@ -23,12 +23,12 @@
 	"dh_主界面点击战斗": {
 		"recognition": "OCR",
 		"roi": [904, 387, 124, 65],
-		"expected": "COMBAT",
+		"expected": "CO",
 		"action": "LongPress",
 		"duration": 13,
 		"post_delay": 2500,
 		"next": [
-			"dh_MISSION",
+			"dh_CAMPAIGN",
 			"dh_主界面点击战斗"
 		]
 	},

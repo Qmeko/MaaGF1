@@ -1,5 +1,5 @@
 {
-	"!!莫比乌斯带上的ad逃亡": {
+	"!莫比乌斯带上的ad逃亡": {
 		"recognition": "DirectHit",
 		"action": "DoNothing",
 		"next": [
@@ -132,20 +132,11 @@
 		"rate_limit": 2000,
 		"timeout": 40000,
 		"next": [
-			"sz_结束回合",
+			"sz_结束回合1",
 			"sz_执行计划"
 		],
 		"on_error": [
 			"sz_点击计划模式"
-		]
-	},
-	"sz_结束回合": {
-		"recognition": "OCR",
-		"roi": [409, 30, 83, 63],
-		"expected": "02",
-		"timeout": 190000,
-		"next": [
-			"sz_结束回合1"
 		]
 	},
 	"sz_结束回合1": {
