@@ -1,0 +1,166 @@
+{
+	"zdjz_": {},
+	"zdjz_开始": {
+		"recognition": "OCR",
+		"roi": [1071, 272, 182, 68],
+		"expected": ["工厂"],
+		"action": "LongPress",
+		"duration": 13,
+		"post_delay": 3000,
+		"next": [
+			"zdjz_人形",
+			"zdjz_开始"
+		]
+	},
+	"zdjc_领取全部": {
+		"recognition": "OCR",
+		"roi": [193, 649, 146, 58],
+		"expected": ["领取全部"],
+		"action": "LongPress",
+		"duration": 13,
+		"repeat": 3,
+		"pre_delay": 400,
+		"next": [
+			"[JumpBack]zdjz_领取取消快建",
+			"zdjz_人形",
+			"zdjc_领取"
+		]
+	},
+	"zdjz_领取取消快建": {
+		"recognition": "ColorMatch",
+		"roi": [248, 549, 15, 18],
+		"upper": [255, 181, 0],
+		"lower": [255, 181, 0],
+		"action": "LongPress",
+		"duration": 13,
+		"target": true,
+		"next": []
+	},
+	"zdjc_领取": {
+		"recognition": "OCR",
+		"roi": [900, 476, 105, 57],
+		"expected": ["确定"],
+		"action": "LongPress",
+		"duration": 13,
+		"repeat": 3,
+		"next": [
+			"[JumpBack]zdjc_无完成",
+			"zdjz_人形"
+		]
+	},
+	"zdjc_无完成": {
+		"recognition": "OCR",
+		"roi": [699, 476, 107, 57],
+		"expected": ["取消"],
+		"action": "LongPress",
+		"duration": 13,
+		"next": []
+	},
+	"zdjz_人形": {
+		"recognition": "OCR",
+		"roi": [25, 121, 149, 64],
+		"expected": ["人形"],
+		"action": "LongPress",
+		"duration": 13,
+		"post_delay": 1000,
+		"rate_limit": 1500,
+		"next": [
+			"zdjc_领取全部",
+			"zdjz_普通制造",
+			"返回主界面_建造"
+		]
+	},
+	"zdjz_普通制造": {
+		"recognition": "OCR",
+		"roi": [569, 422, 80, 25],
+		"expected": ["人形制造"],
+		"action": "LongPress",
+		"duration": 13,
+		"next": [
+			"zdjz_推荐公式"
+		]
+	},
+	"zdjz_重造": {
+		"recognition": "OCR",
+		"roi": [1152, 420, 92, 29],
+		"expected": ["重型制造"],
+		"action": "LongPress",
+		"duration": 13,
+		"next": []
+	},
+	"zdjz_妖精": {
+		"recognition": "OCR",
+		"roi": [56, 486, 120, 122],
+		"expected": ["妖精"],
+		"action": "LongPress",
+		"duration": 13,
+		"next": []
+	},
+	"zdjz_装备": {
+		"recognition": "OCR",
+		"roi": [56, 486, 120, 122],
+		"expected": ["装备"],
+		"action": "LongPress",
+		"duration": 13,
+		"next": []
+	},
+	"zdjz_推荐公式": {
+		"recognition": "OCR",
+		"roi": [237, 441, 56, 31],
+		"expected": ["推荐"],
+		"action": "LongPress",
+		"duration": 13,
+		"next": [
+			"zdjz_收藏夹"
+		]
+	},
+	"zdjz_收藏夹": {
+		"recognition": "OCR",
+		"roi": [34, 226, 135, 67],
+		"expected": ["收藏夹"],
+		"action": "LongPress",
+		"duration": 13,
+		"next": [
+			"zdjz_套用收藏"
+		]
+	},
+	"zdjz_套用收藏": {
+		"recognition": "OCR",
+		"roi": [1014, 147, 132, 51],
+		"expected": ["套用公式"],
+		"action": "LongPress",
+		"duration": 13,
+		"next": [
+			"zdjz_批量制造"
+		]
+	},
+	"zdjz_批量制造": {
+		"recognition": "OCR",
+		"roi": [239, 561, 152, 49],
+		"expected": ["批量制造"],
+		"action": "LongPress",
+		"duration": 13,
+		"next": [
+			"[JumpBack]zdjz_取消快建",
+			"zdjz_开始制造"
+		]
+	},
+	"zdjz_取消快建": {
+		"recognition": "ColorMatch",
+		"roi": [248, 549, 15, 18],
+		"upper": [255, 181, 0],
+		"lower": [255, 181, 0],
+		"action": "LongPress",
+		"duration": 13,
+		"target": true,
+		"next": []
+	},
+	"zdjz_开始制造": {
+		"recognition": "OCR",
+		"roi": [887, 537, 165, 53],
+		"expected": ["开始制造"],
+		"action": "LongPress",
+		"duration": 13,
+		"next": []
+	}
+}

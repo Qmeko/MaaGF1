@@ -764,6 +764,45 @@
 				"public_关卡结算点击5": {"post_delay": 300}
 			}
 		},
+		"自动建造": {
+			"case": [
+				{
+					"name": "不进行建造",
+					"pipeline_override": {
+						"!返回主界面": {
+							"next": [
+								"返回主界面_识别主界面",
+								"[JumpBack]后勤",
+								"[JumpBack]返回主界面_ESC"
+							]
+						}
+					}
+				},
+				{"name": "人形普通建造"},
+				{
+					"name": "装备建造",
+					"pipeline_override": {
+						"zdjz_开始": {
+							"next": [
+								"zdjz_装备",
+								"zdjz_开始"
+							]
+						}
+					}
+				},
+				{
+					"name": "妖精建造",
+					"pipeline_override": {
+						"zdjz_开始": {
+							"next": [
+								"zdjz_妖精",
+								"zdjz_开始"
+							]
+						}
+					}
+				}
+			]
+		},
 		"循演普通_选择打捞关卡": {
 			"cases": [
 				{"name": "a1 数据接口"},
