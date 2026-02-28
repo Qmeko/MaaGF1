@@ -2,10 +2,11 @@
 	"zdjz_": {},
 	"zdjz_开始": {
 		"recognition": "OCR",
-		"roi": [1071, 272, 182, 68],
-		"expected": ["工厂"],
+		"roi": [1118, 661, 56, 30],
+		"expected": ["邮件"],
 		"action": "LongPress",
 		"duration": 13,
+		"target": [1161, 302, 1, 1],
 		"post_delay": 3000,
 		"next": [
 			"zdjz_人形",
@@ -13,6 +14,7 @@
 		]
 	},
 	"zdjc_领取全部": {
+		"max_hit": 1,
 		"recognition": "OCR",
 		"roi": [193, 649, 146, 58],
 		"expected": ["领取全部"],
@@ -20,15 +22,15 @@
 		"duration": 13,
 		"repeat": 3,
 		"pre_delay": 400,
+		"post_delay": 1000,
 		"next": [
 			"[JumpBack]zdjz_领取取消快建",
-			"zdjz_人形",
 			"zdjc_领取"
 		]
 	},
 	"zdjz_领取取消快建": {
 		"recognition": "ColorMatch",
-		"roi": [248, 549, 15, 18],
+		"roi": [340, 500, 6, 12],
 		"upper": [255, 181, 0],
 		"lower": [255, 181, 0],
 		"action": "LongPress",
@@ -42,10 +44,12 @@
 		"expected": ["确定"],
 		"action": "LongPress",
 		"duration": 13,
-		"repeat": 3,
+		"target": [962, 525, 1, 1],
+		"repeat_delay": 500,
+		"repeat": 6,
 		"next": [
-			"[JumpBack]zdjc_无完成",
-			"zdjz_人形"
+			"zdjc_无完成",
+			"zdjc_完成"
 		]
 	},
 	"zdjc_无完成": {
@@ -54,28 +58,36 @@
 		"expected": ["取消"],
 		"action": "LongPress",
 		"duration": 13,
+		"post_delay": 800,
+		"next": []
+	},
+	"zdjc_完成": {
+		"recognition": "DirectHit",
+		"action": "DoNothing",
+		"post_delay": 500,
 		"next": []
 	},
 	"zdjz_人形": {
 		"recognition": "OCR",
 		"roi": [25, 121, 149, 64],
-		"expected": ["人形"],
+		"expected": ["人形", "锚定"],
 		"action": "LongPress",
 		"duration": 13,
 		"post_delay": 1000,
 		"rate_limit": 1500,
 		"next": [
-			"zdjc_领取全部",
+			"[JumpBack]zdjc_领取全部",
 			"zdjz_普通制造",
 			"返回主界面_建造"
 		]
 	},
 	"zdjz_普通制造": {
 		"recognition": "OCR",
-		"roi": [569, 422, 80, 25],
+		"roi": [565, 416, 93, 241],
 		"expected": ["人形制造"],
 		"action": "LongPress",
 		"duration": 13,
+		"post_delay": 800,
 		"next": [
 			"zdjz_推荐公式"
 		]
@@ -86,6 +98,7 @@
 		"expected": ["重型制造"],
 		"action": "LongPress",
 		"duration": 13,
+		"post_delay": 800,
 		"next": []
 	},
 	"zdjz_妖精": {
@@ -94,7 +107,13 @@
 		"expected": ["妖精"],
 		"action": "LongPress",
 		"duration": 13,
-		"next": []
+		"post_delay": 1000,
+		"rate_limit": 1500,
+		"next": [
+			"[JumpBack]zdjc_领取全部",
+			"zdjz_妖精_1",
+			"返回主界面_建造"
+		]
 	},
 	"zdjz_装备": {
 		"recognition": "OCR",
@@ -102,7 +121,19 @@
 		"expected": ["装备"],
 		"action": "LongPress",
 		"duration": 13,
+		"post_delay": 800,
 		"next": []
+	},
+	"zdjz_妖精_1": {
+		"recognition": "OCR",
+		"roi": [1098, 181, 145, 316],
+		"expected": ["开始"],
+		"action": "LongPress",
+		"duration": 13,
+		"post_delay": 800,
+		"next": [
+			"zdjz_推荐公式"
+		]
 	},
 	"zdjz_推荐公式": {
 		"recognition": "OCR",
@@ -110,6 +141,7 @@
 		"expected": ["推荐"],
 		"action": "LongPress",
 		"duration": 13,
+		"post_delay": 800,
 		"next": [
 			"zdjz_收藏夹"
 		]
@@ -120,6 +152,7 @@
 		"expected": ["收藏夹"],
 		"action": "LongPress",
 		"duration": 13,
+		"post_delay": 800,
 		"next": [
 			"zdjz_套用收藏"
 		]
@@ -130,6 +163,7 @@
 		"expected": ["套用公式"],
 		"action": "LongPress",
 		"duration": 13,
+		"post_delay": 800,
 		"next": [
 			"zdjz_批量制造"
 		]
@@ -140,12 +174,13 @@
 		"expected": ["批量制造"],
 		"action": "LongPress",
 		"duration": 13,
+		"post_delay": 800,
 		"next": [
-			"[JumpBack]zdjz_取消快建",
+			"[JumpBack]zdjz_建造取消快建",
 			"zdjz_开始制造"
 		]
 	},
-	"zdjz_取消快建": {
+	"zdjz_建造取消快建": {
 		"recognition": "ColorMatch",
 		"roi": [248, 549, 15, 18],
 		"upper": [255, 181, 0],
@@ -153,6 +188,7 @@
 		"action": "LongPress",
 		"duration": 13,
 		"target": true,
+		"post_delay": 800,
 		"next": []
 	},
 	"zdjz_开始制造": {
@@ -161,6 +197,9 @@
 		"expected": ["开始制造"],
 		"action": "LongPress",
 		"duration": 13,
-		"next": []
+		"post_delay": 1000,
+		"next": [
+			"返回主界面_建造"
+		]
 	}
 }
