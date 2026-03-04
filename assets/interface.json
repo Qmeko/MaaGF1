@@ -169,7 +169,7 @@
 			"entry": "!莫比乌斯带上的ad逃亡",
 			"check": false,
 			"doc": "[color:tomato]在 主界面 启动，局内地图缩放要求同`0元购`[/color]",
-			"option": ["N分钟后返回基地"],
+			"option": ["N分钟后返回基地", "自动建造"],
 			"repeatable": true,
 			"repeat_count": -1
 		},
@@ -765,7 +765,7 @@
 			}
 		},
 		"自动建造": {
-			"case": [
+			"cases": [
 				{
 					"name": "不进行建造",
 					"pipeline_override": {
