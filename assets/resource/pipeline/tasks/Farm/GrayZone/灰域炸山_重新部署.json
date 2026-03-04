@@ -137,19 +137,11 @@
 			"param": {}
 		},
 		"action": {
-			"type": "Command",
+			"type": "Scroll",
 			"param": {
-				"exec": "powershell",
-				"args": [
-					"-ExecutionPolicy",
-					"Bypass",
-					"-File",
-					"{RESOURCE_DIR}/../tools/scroll.ps1",
-					"-ScrollCount",
-					"100",
-					"-Direction",
-					"down"
-				]
+				"target": [500, 500],
+				"dy": -120,
+				"repeat": 100
 			}
 		},
 		"pre_delay": 0,
