@@ -173,7 +173,7 @@
 			"entry": "!莫比乌斯带上的ad逃亡",
 			"check": false,
 			"doc": "[color:tomato]在 主界面 启动，局内地图缩放要求同`0元购`[/color]",
-			"option": ["N分钟后返回基地"],
+			"option": ["N分钟后返回基地", "自动建造"],
 			"repeatable": true,
 			"repeat_count": -1
 		},
@@ -767,6 +767,45 @@
 				},
 				"public_关卡结算点击5": {"post_delay": 300}
 			}
+		},
+		"自动建造": {
+			"cases": [
+				{
+					"name": "不进行建造",
+					"pipeline_override": {
+						"!返回主界面": {
+							"next": [
+								"返回主界面_识别主界面",
+								"[JumpBack]后勤",
+								"[JumpBack]返回主界面_ESC"
+							]
+						}
+					}
+				},
+				{"name": "人形普通建造"},
+				{
+					"name": "装备建造",
+					"pipeline_override": {
+						"zdjz_开始": {
+							"next": [
+								"zdjz_装备",
+								"zdjz_开始"
+							]
+						}
+					}
+				},
+				{
+					"name": "妖精建造",
+					"pipeline_override": {
+						"zdjz_开始": {
+							"next": [
+								"zdjz_妖精",
+								"zdjz_开始"
+							]
+						}
+					}
+				}
+			]
 		},
 		"循演普通_选择打捞关卡": {
 			"cases": [
