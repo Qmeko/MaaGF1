@@ -3,11 +3,12 @@
 	"name": "MaaGF1",
 	"url": "https://github.com/MaaGF1/MaaGF1",
 	"interface_version": 2,
-	"version": "v1.11.0-alpha.1",
-	"title": "$MaaGF1_Title",
-	"welcome": "[点击这里浏览器打开操作手册](https://maagf1.github.io/docs/",
+	"version": "v1.10.2",
+	"title": "$_MaaGF1_Title",
 	"mirrorchyan_rid": null,
 	"mirrorchyan_multiplatform": false,
+	"license": "$_License_URL",
+	"description": "$_Description",
 	"controller": [
 		{
 			"name": "Desktop",
@@ -23,11 +24,13 @@
 	],
 	"resource": [
 		{
-			"name": "国服",
+			"name": "Resource_CN",
+			"label": "$_Resource_Label_CN",
 			"path": ["{PROJECT_DIR}/resource/"]
 		},
 		{
-			"name": "美服",
+			"name": "Resource_US",
+			"label": "$_Resource_Label_US",
 			"path": [
 				"{PROJECT_DIR}/resource/",
 				"{PROJECT_DIR}/resource_en/"
@@ -41,6 +44,7 @@
 	"task": [
 		{
 			"name": "1.经验 - 13-4循环",
+			"label": "$_1_Experience_134_Label",
 			"entry": "!134总流程",
 			"check": false,
 			"doc": "请在第十三战役-普通界面或者进入13-4地图后的界面运行， **要求地图缩放到最小** ，[点击这里浏览器打开操作手册](https://maagf1.github.io/docs/)",
@@ -169,7 +173,7 @@
 			"entry": "!莫比乌斯带上的ad逃亡",
 			"check": false,
 			"doc": "[color:tomato]在 主界面 启动，局内地图缩放要求同`0元购`[/color]",
-			"option": ["N分钟后返回基地"],
+			"option": ["N分钟后返回基地", "自动建造"],
 			"repeatable": true,
 			"repeat_count": -1
 		},
@@ -763,6 +767,45 @@
 				},
 				"public_关卡结算点击5": {"post_delay": 300}
 			}
+		},
+		"自动建造": {
+			"cases": [
+				{
+					"name": "不进行建造",
+					"pipeline_override": {
+						"!返回主界面": {
+							"next": [
+								"返回主界面_识别主界面",
+								"[JumpBack]后勤",
+								"[JumpBack]返回主界面_ESC"
+							]
+						}
+					}
+				},
+				{"name": "人形普通建造"},
+				{
+					"name": "装备建造",
+					"pipeline_override": {
+						"zdjz_开始": {
+							"next": [
+								"zdjz_装备",
+								"zdjz_开始"
+							]
+						}
+					}
+				},
+				{
+					"name": "妖精建造",
+					"pipeline_override": {
+						"zdjz_开始": {
+							"next": [
+								"zdjz_妖精",
+								"zdjz_开始"
+							]
+						}
+					}
+				}
+			]
 		},
 		"循演普通_选择打捞关卡": {
 			"cases": [
