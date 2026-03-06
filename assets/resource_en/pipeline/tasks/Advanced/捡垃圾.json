@@ -1,0 +1,131 @@
+{
+	"jlj_": {},
+	"!裂变链接捡垃圾": {
+		"next": [
+			"[JumpBack]dh_记录参数_resume",
+			"jlj_计时"
+		]
+	},
+	"jlj_点击开始作战": {
+		"recognition": "OCR",
+		"roi": [986, 149, 50, 40],
+		"expected": "23",
+		"action": "LongPress",
+		"duration": 13,
+		"target": [1087, 664, 1, 1],
+		"next": [
+			"jlj_计时"
+		]
+	},
+	"jlj_计时": {
+		"recognition": "OCR",
+		"roi": [1106, 641, 58, 43],
+		"expected": "END",
+		"action": "Custom",
+		"custom_action": "matlab_calculate",
+		"custom_action_param": {
+			"syntax": "(_get_time - Start_Time)/60 > T",
+			"true": "!fh_主界面",
+			"false": "jlj_点击计划模式"
+		}
+	},
+	"jlj_点击计划模式": {
+		"recognition": "OCR",
+		"roi": [1106, 641, 58, 43],
+		"expected": "END",
+		"action": "LongPress",
+		"target": [54, 621, 32, 12],
+		"duration": 13,
+		"post_delay": 600,
+		"next": [
+			"jlj_计划点1",
+			"jlj_点击计划模式"
+		]
+	},
+	"jlj_计划点1": {
+		"recognition": "OCR",
+		"roi": [1101, 623, 162, 85],
+		"expected": ["EXE", "CUTE"],
+		"action": "LongPress",
+		"duration": 13,
+		"target": [714, 457, 1, 1],
+		"post_delay": 200,
+		"next": [
+			"jlj_计划点2"
+		]
+	},
+	"jlj_计划点2": {
+		"recognition": "DirectHit",
+		"action": "LongPress",
+		"duration": 12,
+		"target": [718, 167, 1, 1],
+		"next": [
+			"jlj_判断计划路径"
+		]
+	},
+	"jlj_判断计划路径": {
+		"recognition": "OCR",
+		"roi": [1008, 659, 43, 50],
+		"expected": "5",
+		"next": [
+			"jlj_执行计划"
+		]
+	},
+	"jlj_执行计划": {
+		"recognition": "OCR",
+		"roi": [1101, 623, 162, 85],
+		"expected": ["EXE", "CUTE"],
+		"action": "LongPress",
+		"duration": 13,
+		"post_delay": 1000,
+		"rate_limit": 2000,
+		"timeout": 40000,
+		"next": [
+			"jlj_弹窗"
+		]
+	},
+	"jlj_弹窗": {
+		"recognition": "OCR",
+		"roi": [732, 476, 81, 45],
+		"expected": ["OK"],
+		"action": "LongPress",
+		"duration": 13,
+		"next": [
+			"jlj_进入对局"
+		]
+	},
+	"jlj_进入对局": {
+		"recognition": "OCR",
+		"roi": [995, 43, 55, 28],
+		"expected": "TIME",
+		"action": "LongPress",
+		"duration": 13,
+		"target": [640, 16, 1, 1],
+		"next": [
+			"jlj_撤退"
+		]
+	},
+	"jlj_撤退": {
+		"recognition": "OCR",
+		"roi": [345, 8, 168, 36],
+		"expected": "WITH",
+		"action": "LongPress",
+		"duration": 13,
+		"post_delay": 1000,
+		"next": [
+			"jlj_结束回合"
+		]
+	},
+	"jlj_结束回合": {
+		"recognition": "OCR",
+		"roi": [371, 608, 91, 36],
+		"expected": ["Repeat"],
+		"action": "LongPress",
+		"duration": 13,
+		"repeat": 3,
+		"post_delay": 800,
+		"next": [
+			"jlj_点击开始作战"
+		]
+	}
+}
