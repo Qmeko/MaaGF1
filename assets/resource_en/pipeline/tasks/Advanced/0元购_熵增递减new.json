@@ -1,0 +1,154 @@
+{
+	"!莫比乌斯带上的ad逃亡": {
+		"recognition": "DirectHit",
+		"action": "DoNothing",
+		"next": [
+			"[JumpBack]dh_初始化",
+			"sz_菜单识别sz进入"
+		]
+	},
+	"sz_": {},
+	"sz_菜单识别sz进入": {
+		"recognition": "OCR",
+		"roi": [671, 295, 248, 49],
+		"expected": "RE",
+		"action": "LongPress",
+		"duration": 13,
+		"post_delay": 2500,
+		"next": [
+			"sz_识别进入第一章",
+			"sz_菜单识别sz进入",
+			"[JumpBack]sz_点击进入第一章"
+		]
+	},
+	"sz_识别进入第一章": {
+		"recognition": "OCR",
+		"roi": [25, 213, 62, 26],
+		"expected": "Cpt",
+		"post_delay": 1000,
+		"next": [
+			"sz_进入sz关卡",
+			"[JumpBack]sz_切换关卡"
+		]
+	},
+	"sz_点击进入第一章": {
+		"recognition": "DirectHit",
+		"action": "LongPress",
+		"duration": 13,
+		"target": [462, 697, 1, 1],
+		"post_delay": 1000,
+		"next": []
+	},
+	"sz_切换关卡": {
+		"recognition": "DirectHit",
+		"action": "LongPress",
+		"target": [481, 704, 21, 10],
+		"duration": 10,
+		"pre_delay": 500,
+		"post_delay": 500,
+		"next": []
+	},
+	"sz_进入sz关卡": {
+		"recognition": "OCR",
+		"roi": [1015, 395, 57, 25],
+		"expected": "AUTO",
+		"action": "LongPress",
+		"duration": 15,
+		"target": [1149, 401, 59, 29],
+		"post_delay": 1500,
+		"next": [
+			"sz_计时",
+			"sz_进入sz关卡"
+		]
+	},
+	"sz_计时": {
+		"recognition": "OCR",
+		"roi": [906, 376, 71, 35],
+		"expected": "29301",
+		"action": "Custom",
+		"custom_action": "matlab_calculate",
+		"custom_action_param": {
+			"syntax": "(_get_time - Start_Time)/60 > T",
+			"true": "!fh_主界面",
+			"false": "sz_开始作战"
+		},
+		"pre_delay": 1,
+		"post_delay": 1
+	},
+	"sz_开始作战": {
+		"recognition": "OCR",
+		"roi": [1008, 635, 92, 27],
+		"expected": "START",
+		"action": "LongPress",
+		"duration": 13,
+		"pre_delay": 1,
+		"post_delay": 600,
+		"next": [
+			"sz_点击计划模式",
+			"sz_开始作战"
+		]
+	},
+	"sz_点击计划模式": {
+		"recognition": "OCR",
+		"roi": [1106, 641, 58, 43],
+		"expected": "END",
+		"action": "LongPress",
+		"target": [54, 621, 32, 12],
+		"duration": 15,
+		"post_delay": 600,
+		"next": [
+			"sz_点击计划点1",
+			"sz_点击计划模式"
+		]
+	},
+	"sz_点击计划点1": {
+		"recognition": "OCR",
+		"roi": [1101, 623, 162, 85],
+		"expected": ["EXE", "CUTE"],
+		"action": "LongPress",
+		"duration": 15,
+		"target": [428, 140, 17, 18],
+		"next": [
+			"sz_点击计划点2"
+		]
+	},
+	"sz_点击计划点2": {
+		"recognition": "DirectHit",
+		"action": "LongPress",
+		"target": [553, 482, 17, 18],
+		"duration": 15,
+		"post_delay": 800,
+		"next": [
+			"sz_执行计划"
+		]
+	},
+	"sz_执行计划": {
+		"recognition": "OCR",
+		"roi": [1101, 623, 162, 85],
+		"expected": ["EXE", "CUTE"],
+		"action": "LongPress",
+		"duration": 15,
+		"post_delay": 10000,
+		"rate_limit": 2000,
+		"timeout": 40000,
+		"next": [
+			"sz_结束回合1",
+			"sz_执行计划"
+		]
+	},
+	"sz_结束回合1": {
+		"recognition": "OCR",
+		"roi": [371, 608, 91, 36],
+		"expected": ["Repeat"],
+		"action": "LongPress",
+		"duration": 13,
+		"rate_limit": 500,
+		"post_delay": 1,
+		"timeout": 120000,
+		"next": [
+			"sz_菜单识别sz进入",
+			"sz_计时",
+			"[JumpBack]public_关卡结算点击1"
+		]
+	}
+}

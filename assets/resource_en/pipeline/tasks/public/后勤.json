@@ -6,7 +6,6 @@
 		"expected": ["全体出征", "Fu", "Ex"],
 		"action": "LongPress",
 		"duration": 15,
-		"target": true,
 		"post_delay": 1500,
 		"next": [
 			"后勤_确认",
@@ -21,9 +20,14 @@
 		"duration": 10,
 		"post_delay": 4000,
 		"next": [
-			"返回主界面_识别主界面1",
-			"后勤_确认",
-			"后勤"
+			"后勤_识别是否完成",
+			"后勤_确认"
 		]
+	},
+	"后勤_识别是否完成": {
+		"recognition": "OCR",
+		"roi": [904, 387, 124, 65],
+		"expected": "CO",
+		"next": []
 	}
 }
