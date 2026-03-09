@@ -87,7 +87,7 @@
 	"jlj_弹窗": {
 		"recognition": "OCR",
 		"roi": [732, 476, 81, 45],
-		"expected": ["OK"],
+		"expected": ["K","OK"],
 		"action": "LongPress",
 		"duration": 13,
 		"next": [
