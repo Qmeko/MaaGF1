@@ -32,7 +32,7 @@
 	},
 	"宿舍_数量排序": {
 		"recognition": "OCR",
-		"roi": [995, 396, 222, 171],
+		"roi": [995, 396, 280, 171],
 		"expected": "宿舍数量",
 		"action": "LongPress",
 		"duration": 20,
