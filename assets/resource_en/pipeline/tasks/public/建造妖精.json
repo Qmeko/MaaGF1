@@ -3,7 +3,7 @@
 		"focus": {"Node.Recognition.Succeeded": "检查妖精"},
 		"recognition": "OCR",
 		"roi": [1073, 261, 135, 55],
-		"expected": "FA",
+		"expected": "F",
 		"action": "LongPress",
 		"duration": 10,
 		"next": [
@@ -14,7 +14,7 @@
 	"妖精重建": {
 		"recognition": "OCR",
 		"roi": [107, 560, 35, 34],
-		"expected": "FA",
+		"expected": "F",
 		"action": "LongPress",
 		"duration": 10,
 		"post_delay": 2500,

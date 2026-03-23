@@ -1,6 +1,6 @@
 {
 	"dh_记录参数_resume": {
-		"max_hit": 1,
+		"max_hit":1,
 		"recognition": "DirectHit",
 		"action": "Custom",
 		"custom_action": "matlab_calculate",

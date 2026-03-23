@@ -8,13 +8,16 @@
 	},
 	"jlj_点击开始作战": {
 		"recognition": "OCR",
-		"roi": [986, 149, 50, 40],
-		"expected": "23",
+		"roi": [737, 413, 17, 30],
+		"expected": "1",
 		"action": "LongPress",
 		"duration": 13,
+		"pre_delay": 400,
+		"post_delay": 800,
 		"target": [1087, 664, 1, 1],
 		"next": [
-			"jlj_计时"
+			"jlj_计时",
+			"jlj_点击开始作战"
 		]
 	},
 	"jlj_计时": {
@@ -36,7 +39,8 @@
 		"action": "LongPress",
 		"target": [54, 621, 32, 12],
 		"duration": 13,
-		"post_delay": 600,
+		"pre_delay": 1000,
+		"post_delay": 1000,
 		"next": [
 			"jlj_计划点1",
 			"jlj_点击计划模式"
@@ -60,7 +64,8 @@
 		"duration": 12,
 		"target": [718, 167, 1, 1],
 		"next": [
-			"jlj_判断计划路径"
+			"jlj_判断计划路径",
+			"!fh_中途卡住"
 		]
 	},
 	"jlj_判断计划路径": {
@@ -78,31 +83,45 @@
 		"action": "LongPress",
 		"duration": 13,
 		"post_delay": 1000,
-		"rate_limit": 2000,
-		"timeout": 40000,
+		"timeout": 60000,
 		"next": [
 			"jlj_弹窗"
 		]
 	},
 	"jlj_弹窗": {
 		"recognition": "OCR",
-		"roi": [732, 476, 81, 45],
-		"expected": ["K", "OK"],
+		"roi": [504, 484, 102, 32],
+		"expected": "CANCEL",
 		"action": "LongPress",
-		"duration": 13,
+		"duration": 10,
+		"target": [736, 485, 1, 1],
+		"post_delay": 3500,
+		"timeout": 60000,
 		"next": [
-			"jlj_进入对局"
+			"jlj_进入对局",
+			"jlj_弹窗"
 		]
 	},
 	"jlj_进入对局": {
 		"recognition": "OCR",
 		"roi": [995, 43, 55, 28],
 		"expected": "TIME",
-		"action": "LongPress",
-		"duration": 13,
-		"target": [640, 16, 1, 1],
+		"action": "DoNothing",
+		"post_delay": 1,
 		"next": [
-			"jlj_撤退"
+			"jlj_pause"
+		]
+	},
+	"jlj_pause": {
+		"recognition": "DirectHit",
+		"action": "LongPress",
+		"duration": 12,
+		"target": [640, 16, 1, 1],
+		"pre_delay": 1,
+		"post_delay": 250,
+		"next": [
+			"jlj_撤退",
+			"jlj_pause"
 		]
 	},
 	"jlj_撤退": {
@@ -111,21 +130,22 @@
 		"expected": "WITH",
 		"action": "LongPress",
 		"duration": 13,
-		"post_delay": 1000,
+		"post_delay": 8000,
 		"next": [
-			"jlj_结束回合"
+			"jlj_结束回合",
+			"jlj_撤退"
 		]
 	},
 	"jlj_结束回合": {
 		"recognition": "OCR",
 		"roi": [371, 608, 91, 36],
-		"expected": ["Repeat"],
+		"expected": ["R"],
 		"action": "LongPress",
 		"duration": 13,
-		"repeat": 3,
-		"post_delay": 800,
+		"timeout": 60000,
 		"next": [
-			"jlj_点击开始作战"
+			"jlj_点击开始作战",
+			"jlj_结束回合"
 		]
 	}
 }
