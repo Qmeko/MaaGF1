@@ -137,6 +137,15 @@
 			"entry": "!裂变链接捡垃圾",
 			"check": false,
 			"doc": "⚠️打开记录缩放，将地图缩放至最小并拉从最左下向右上拉至地图边缘后手动运行一次再开始脚本[点击这里浏览器打开操作手册](https://maagf1.github.io/docs/)",
+			"option": ["部署梯队选择", "目标梯队一号位人形"],
+			"repeatable": true,
+			"repeat_count": -1
+		},
+		{
+			"name": "3.资源 - EN外服裂变链接捡垃圾",
+			"entry": "!AD裂变链接捡垃圾",
+			"check": false,
+			"doc": "目前不支持国服",
 			"option": ["resume参数"],
 			"repeatable": true,
 			"repeat_count": -1
