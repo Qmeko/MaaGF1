@@ -15,7 +15,7 @@ MaaGF1 is an automation tool for the game "Girls' Frontline" based on [MaaFramew
 
 ### 2.1 Quick Start
 
-1. [Download and Run](https://github.com/MaaGF1/MaaGF1/wiki/Tutorial-Begin)
+1. [Download and Run](https://github.com/MaaGF1/MaaGF1/wiki/Tutorial-Begin-V2)
 2. [User Manual](https://github.com/MaaGF1/docs)
 
 ### 2.2 Internationalization
