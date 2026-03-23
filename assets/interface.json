@@ -3,7 +3,7 @@
 	"name": "MaaGF1",
 	"url": "https://github.com/MaaGF1/MaaGF1",
 	"interface_version": 2,
-	"version": "v2.0.0-beta.1",
+	"version": "v2.0.0-beta.2",
 	"title": "$_MaaGF1_Title",
 	"mirrorchyan_rid": null,
 	"mirrorchyan_multiplatform": false,
@@ -164,7 +164,7 @@
 			"entry": "!莫比乌斯带上的逃亡",
 			"check": false,
 			"doc": "⚠️在主界面 或 常驻活动-卷积核界面运行[点击这里浏览器打开操作手册](https://maagf1.github.io/docs/)",
-			"option": ["0元购关卡", "拆解N次后返回", "自动建造"],
+			"option": ["0元购关卡"],
 			"repeatable": true,
 			"repeat_count": -1
 		},
@@ -173,7 +173,7 @@
 			"entry": "!莫比乌斯带上的ad逃亡",
 			"check": false,
 			"doc": "[color:tomato]在 主界面 启动，局内地图缩放要求同`0元购`[/color]",
-			"option": ["N分钟后返回基地", "自动建造"],
+			"option": ["N分钟后返回基地", "自动建造", "难度选择"],
 			"repeatable": true,
 			"repeat_count": -1
 		},
@@ -802,6 +802,22 @@
 								"zdjz_妖精",
 								"zdjz_开始"
 							]
+						}
+					}
+				}
+			]
+		},
+		"难度选择": {
+			"cases": [
+				{"name": "普通"},
+				{
+					"name": "困难",
+					"pipeline_override": {
+						"ad逃亡_切换难度": {
+							"expected": ["普通", "噩梦"]
+						},
+						"ad逃亡_部署梯队": {
+							"target": [664, 163, 1, 1]
 						}
 					}
 				}
