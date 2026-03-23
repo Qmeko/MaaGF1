@@ -21,10 +21,22 @@
 		"action": "LongPress",
 		"duration": 13,
 		"target": [193, 649, 1, 1],
-		"repeat": 8,
+		"repeat": 2,
 		"repeat_delay": 400,
 		"pre_delay": 400,
 		"post_delay": 1000,
+		"next": [
+			"zdjz_无条件点击"
+		]
+	},
+	"zdjz_无条件点击": {
+		"recognition": "DirectHit",
+		"action": "LongPress",
+		"duration": 13,
+		"target": [1200, 20, 0, 0],
+		"repeat": 10,
+		"repeat_delay": 500,
+		"post_delay": 500,
 		"next": [
 			"[JumpBack]zdjz_领取取消快建",
 			"zdjc_领取"
@@ -46,9 +58,18 @@
 		"expected": ["确定"],
 		"action": "LongPress",
 		"duration": 13,
-		"target": [962, 525, 1, 1],
+		"next": [
+			"zdjz_无条件点击1"
+		]
+	},
+	"zdjz_无条件点击1": {
+		"recognition": "DirectHit",
+		"action": "LongPress",
+		"duration": 13,
+		"target": [1200, 20, 0, 0],
+		"repeat": 8,
 		"repeat_delay": 500,
-		"repeat": 6,
+		"post_delay": 500,
 		"next": [
 			"zdjc_无完成",
 			"zdjc_完成"
@@ -60,13 +81,13 @@
 		"expected": ["取消"],
 		"action": "LongPress",
 		"duration": 13,
-		"post_delay": 800,
+		"post_delay": 1000,
 		"next": []
 	},
 	"zdjc_完成": {
 		"recognition": "DirectHit",
 		"action": "DoNothing",
-		"post_delay": 500,
+		"post_delay": 1000,
 		"next": []
 	},
 	"zdjz_人形": {
