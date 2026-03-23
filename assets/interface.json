@@ -173,7 +173,7 @@
 			"entry": "!莫比乌斯带上的ad逃亡",
 			"check": false,
 			"doc": "[color:tomato]在 主界面 启动，局内地图缩放要求同`0元购`[/color]",
-			"option": ["N分钟后返回基地", "自动建造"],
+			"option": ["N分钟后返回基地", "自动建造", "难度选择"],
 			"repeatable": true,
 			"repeat_count": -1
 		},
@@ -802,6 +802,22 @@
 								"zdjz_妖精",
 								"zdjz_开始"
 							]
+						}
+					}
+				}
+			]
+		},
+		"难度选择": {
+			"cases": [
+				{"name": "普通"},
+				{
+					"name": "困难",
+					"pipeline_override": {
+						"ad逃亡_切换难度": {
+							"expected": ["普通", "噩梦"]
+						},
+						"ad逃亡_部署梯队": {
+							"target": [664, 163, 1, 1]
 						}
 					}
 				}
