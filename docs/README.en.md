@@ -25,9 +25,11 @@ MaaGF1 is an automation tool for the game "Girls' Frontline" based on [MaaFramew
 
 ## 3. Other Tools
 
-1. [MaaFramework Watchdog](https://github.com/MaaGF1/logdog)
-2. [MaaPipeline Formatter](https://github.com/MaaGF1/MaaPipeline-Format)
-3. [MaaPipeline Formatter VSCode](https://github.com/MaaGF1/MaaPipeline-Format-VSCode)
+1. [MaaGF1 Org](https://github.com/MaaGF1)
+2. [GFL Maps](https://github.com/MaaGF1/maps)
+	- [zh-CN](https://maagf1.github.io/maps/)
+	- [en-US](https://randomqwerty.github.io/gflmaps/)
+3. [MaaFramework Watchdog](https://github.com/MaaGF1/logdog)
 
 ## 4. Feedback & Contributions
 
@@ -39,7 +41,7 @@ MaaGF1 is an automation tool for the game "Girls' Frontline" based on [MaaFramew
 ### 5.1 Open Source Projects
 
 1. [MaaFramework](https://github.com/MaaXYZ/MaaFramework)
-2. [MFAAvalonia](https://github.com/SweetSmellFox/MFAAvalonia)
+2. [MFAAvalonia](https://github.com/MaaXYZ/MFAAvalonia)
 3. [FMddl-MAAutoGirlsFrontLine](https://github.com/Fufu-OuO/FMddl-MAAutoGirlsFrontLine)
 
 ### 5.2 Contributors
