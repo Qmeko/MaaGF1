@@ -1,0 +1,31 @@
+{
+	"dh_记录参数_resume": {
+		"max_hit": 1,
+		"recognition": "DirectHit",
+		"action": "Custom",
+		"custom_action": "matlab_calculate",
+		"custom_action_param": {
+			"syntax": "Start_Time = _get_time; T = 30"
+		},
+		"post_delay": 1,
+		"next": []
+	},
+	"dh_主界面点击resume": {
+		"recognition": "OCR",
+		"roi": [1113, 530, 119, 60],
+		"expected": "RESUME",
+		"action": "LongPress",
+		"duration": 13,
+		"post_delay": 2500,
+		"next": [
+			"dh_识别是否进入战斗地图",
+			"dh_主界面点击resume"
+		]
+	},
+	"dh_识别是否进入战斗地图": {
+		"recognition": "OCR",
+		"roi": [1106, 641, 58, 43],
+		"expected": "END",
+		"next": []
+	}
+}

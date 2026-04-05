@@ -46,5 +46,14 @@
 			"dh_主界面点击战斗",
 			"[JumpBack]ESC"
 		]
+	},
+	"!fh_中途卡住": {
+		"rate_limit": 2000,
+		"post_delay": 2000,
+		"next": [
+			"[JumpBack]后勤",
+			"dh_主界面点击resume",
+			"[JumpBack]ESC"
+		]
 	}
 }
