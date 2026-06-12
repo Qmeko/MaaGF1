@@ -1,0 +1,32 @@
+---
+description: MaaGF1 作業フォルダ構成ルール
+alwaysApply: true
+---
+
+# MaaGF1 構成とパス更新ルール
+
+正本: `docs/STRUCTURE.ja.md`
+
+## ディレクトリ（本作業フォルダ = MaaGF1）
+
+- `assets/` … MaaFramework 日本語ソース（`resource_jp`, `lang/ja-JP.json`）
+- `install/` … MFAAvalonia 実行環境（gitignore・ローカルのみ）
+- `tools/setup.ps1` … 初回セットアップ
+- `tools/build_jp_ui.ps1` … 日本語 UI 一括ビルド（推奨）
+- `tools/sync_assets.ps1` … assets → install 同期
+- `maagf1-docs/` … 公式マニュアル日中对訳（別 git）
+- `../NewMaaGfl1/gfl-assistant/` … GflAssistant（SendInput 主系・兄弟フォルダ）
+
+## パス変更時に必ず更新するファイル
+
+1. `docs/STRUCTURE.ja.md`
+2. `docs/USAGE.ja.md`, `docs/README.ja.md`, `README.ja.md`
+3. `../NewMaaGfl1/.cursor/rules/maagfl1-structure.mdc`
+4. スクリプト内の相対パス
+
+## 規則
+
+- **日本語化の編集先は常に `assets/`**（NewMaaGfl1/assets は使わない）
+- MFAAvalonia 内リソース DL は禁止 → `build_jp_ui.ps1` / `sync_assets.ps1` のみ
+- 宿舎いいね・後方支援の実行は `../NewMaaGfl1/gfl-assistant/scripts/` 推奨
+- 旧名 MaaNX は参照元としてのみ言及

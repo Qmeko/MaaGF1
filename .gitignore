@@ -460,3 +460,4 @@ tools/hack/**/*.json
 install/
 logs/
 maagf1-docs/site/
+memo.md

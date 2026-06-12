@@ -4,11 +4,11 @@ MaaNX から同期済みのテンプレートがあります。
 自動確認: `.\scripts\check-templates.bat`
 
 > **注意**: `btn_enter_dorm.png` は `hudong.png`（交流ボタン）由来の可能性があります。  
-> 参観ボタンで**撮り直し推奨**（[MaaGfl1_TEMPLATE_CAPTURE.ja.md](../gfl-assistant/docs/MaaGfl1_TEMPLATE_CAPTURE.ja.md) §0-3）
+> 参観ボタンで**撮り直し推奨**（[MaaGfl1_TEMPLATE_CAPTURE.ja.md](../NewMaaGfl1/gfl-assistant/docs/MaaGfl1_TEMPLATE_CAPTURE.ja.md) §0-3）
 
 ---
 
-## gfl-assistant（`Assets/templates/dormitory/`）
+## gfl-assistant（`../NewMaaGfl1/gfl-assistant/Assets/templates/dormitory/`）
 
 | # | ファイル | 状態 |
 |---|----------|------|
@@ -51,10 +51,10 @@ MaaNX から同期済みのテンプレートがあります。
 ## 撮り直し・追加が必要な場合
 
 ```powershell
-.\scripts\coord-picker.bat          # F8=記録, F10=切り出し
-cd gfl-assistant
+..\NewMaaGfl1\scripts\coord-picker.bat
+cd ..\NewMaaGfl1\gfl-assistant
 .\scripts\sync-dormitory-templates.ps1
-cd ..
+cd ..\..\MaaGF1
 .\tools\sync_assets.ps1
 ```
 
@@ -73,7 +73,7 @@ cd ..
 ## テスト手順
 
 ```powershell
-.\scripts\test-smoke.bat
-.\scripts\run-maagfl1-dormitory.bat
-.\scripts\run-dormitory.bat
+..\NewMaaGfl1\scripts\test-smoke.bat
+..\NewMaaGfl1\scripts\run-maagfl1-dormitory.bat
+..\NewMaaGfl1\scripts\run-dormitory.bat
 ```
