@@ -1,0 +1,41 @@
+{
+	"jp_結算クリック1": {
+		"action": "LongPress",
+		"duration": 10,
+		"target": [332, 591, 1, 1],
+		"pre_delay": 1,
+		"post_delay": 15,
+		"next": ["jp_結算クリック2"]
+	},
+	"jp_結算クリック2": {
+		"action": "LongPress",
+		"duration": 10,
+		"target": [332, 591, 1, 1],
+		"pre_delay": 1,
+		"post_delay": 15,
+		"next": ["jp_結算クリック3"]
+	},
+	"jp_結算クリック3": {
+		"action": "LongPress",
+		"duration": 10,
+		"target": [332, 591, 1, 1],
+		"pre_delay": 1,
+		"post_delay": 15,
+		"next": ["jp_結算クリック4"]
+	},
+	"jp_結算クリック4": {
+		"action": "LongPress",
+		"duration": 10,
+		"target": [332, 591, 1, 1],
+		"pre_delay": 10,
+		"post_delay": 100,
+		"next": ["jp_結算クリック5"]
+	},
+	"jp_結算クリック5": {
+		"action": "LongPress",
+		"duration": 10,
+		"target": [332, 591, 1, 1],
+		"post_delay": 1500,
+		"next": []
+	}
+}

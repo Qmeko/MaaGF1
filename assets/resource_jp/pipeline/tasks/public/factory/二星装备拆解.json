@@ -1,0 +1,77 @@
+﻿{
+	"public二星装備回收_装備回收": {
+		"recognition": "OCR",
+		"expected": ["装備", "装", "备"],
+		"roi": [488, 112, 175, 267],
+		"action": "LongPress",
+		"duration": 10,
+		"post_delay": 200,
+		"next": [
+			"public二星装備回收_回收装備",
+			"public二星装備回收_装備回收",
+			"public二星装備回收_智能选择"
+		]
+	},
+	"public二星装備回收_回收装備": {
+		"recognition": "OCR",
+		"roi": [488, 112, 175, 267],
+		"expected": ["装備", "装", "备"],
+		"action": "LongPress",
+		"duration": 10,
+		"post_delay": 200,
+		"next": [
+			"public二星装備回收_智能选择",
+			"public二星装備回收_回收装備"
+		]
+	},
+	"public二星装備回收_智能选择": {
+		"recognition": "OCR",
+		"roi": [1093, 593, 174, 106],
+		"expected": ["智能选择", "确定"],
+		"action": "LongPress",
+		"duration": 10,
+		"post_delay": 200,
+		"next": [
+			"public二星装備回收_智能选择",
+			"public二星装備回收_確認回收"
+		]
+	},
+	"public二星装備回收_確認回收": {
+		"recognition": "OCR",
+		"roi": [1062, 203, 89, 110],
+		"expected": ["人力"],
+		"action": "LongPress",
+		"duration": 10,
+		"target": [1096, 575, 110, 50],
+		"post_delay": 200,
+		"timeout": 2000,
+		"next": [
+			"public二星装備回收_进入导航栏",
+			"public二星装備回收_確認回收"
+		]
+	},
+	"public二星装備回收_进入导航栏": {
+		"recognition": "TemplateMatch",
+		"roi": [124, 18, 120, 105],
+		"template": "storage/navi.png",
+		"action": "LongPress",
+		"duration": 20,
+		"target": [216, 73, 1, 1],
+		"pre_delay": 800,
+		"post_wait_freezes": 200,
+		"next": [
+			"public二星装備回收_导航栏戦闘",
+			"public二星装備回收_进入导航栏"
+		]
+	},
+	"public二星装備回收_导航栏戦闘": {
+		"recognition": "TemplateMatch",
+		"roi": [80, 150, 150, 200],
+		"template": "storage/navi_combat.png",
+		"action": "LongPress",
+		"duration": 500,
+		"pre_delay": 1000,
+		"post_delay": 3000,
+		"next": []
+	}
+}

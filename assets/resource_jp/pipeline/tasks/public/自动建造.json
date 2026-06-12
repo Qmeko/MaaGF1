@@ -1,0 +1,232 @@
+﻿{
+	"zdjz_": {},
+	"zdjz_開始": {
+		"recognition": "OCR",
+		"roi": [1118, 661, 56, 30],
+		"expected": ["邮件"],
+		"action": "LongPress",
+		"duration": 13,
+		"target": [1161, 302, 1, 1],
+		"post_delay": 3000,
+		"next": [
+			"zdjz_人形",
+			"zdjz_開始"
+		]
+	},
+	"zdjc_受け取り全部": {
+		"max_hit": 1,
+		"recognition": "OCR",
+		"roi": [193, 649, 146, 58],
+		"expected": ["受け取り全部"],
+		"action": "LongPress",
+		"duration": 13,
+		"target": [193, 649, 1, 1],
+		"repeat": 2,
+		"repeat_delay": 400,
+		"pre_delay": 400,
+		"post_delay": 1000,
+		"next": [
+			"zdjz_无条件点击"
+		]
+	},
+	"zdjz_无条件点击": {
+		"recognition": "DirectHit",
+		"action": "LongPress",
+		"duration": 13,
+		"target": [1200, 20, 0, 0],
+		"repeat": 10,
+		"repeat_delay": 500,
+		"post_delay": 500,
+		"next": [
+			"[JumpBack]zdjz_受け取りキャンセル快建",
+			"zdjc_受け取り"
+		]
+	},
+	"zdjz_受け取りキャンセル快建": {
+		"recognition": "ColorMatch",
+		"roi": [340, 500, 6, 12],
+		"upper": [255, 181, 0],
+		"lower": [255, 181, 0],
+		"action": "LongPress",
+		"duration": 13,
+		"target": true,
+		"next": []
+	},
+	"zdjc_受け取り": {
+		"recognition": "OCR",
+		"roi": [900, 476, 105, 57],
+		"expected": ["确定"],
+		"action": "LongPress",
+		"duration": 13,
+		"next": [
+			"zdjz_无条件点击1"
+		]
+	},
+	"zdjz_无条件点击1": {
+		"recognition": "DirectHit",
+		"action": "LongPress",
+		"duration": 13,
+		"target": [1200, 20, 0, 0],
+		"repeat": 8,
+		"repeat_delay": 500,
+		"post_delay": 500,
+		"next": [
+			"zdjc_无完了",
+			"zdjc_完了"
+		]
+	},
+	"zdjc_无完了": {
+		"recognition": "OCR",
+		"roi": [699, 476, 107, 57],
+		"expected": ["キャンセル"],
+		"action": "LongPress",
+		"duration": 13,
+		"post_delay": 1000,
+		"next": []
+	},
+	"zdjc_完了": {
+		"recognition": "DirectHit",
+		"action": "DoNothing",
+		"post_delay": 1000,
+		"next": []
+	},
+	"zdjz_人形": {
+		"recognition": "OCR",
+		"roi": [25, 121, 149, 64],
+		"expected": ["人形", "锚定"],
+		"action": "LongPress",
+		"duration": 13,
+		"post_delay": 1000,
+		"rate_limit": 1500,
+		"next": [
+			"[JumpBack]zdjc_受け取り全部",
+			"zdjz_普通制造",
+			"戻る主画面_建造"
+		]
+	},
+	"zdjz_普通制造": {
+		"recognition": "OCR",
+		"roi": [565, 416, 93, 241],
+		"expected": ["制造"],
+		"action": "LongPress",
+		"duration": 13,
+		"post_delay": 800,
+		"next": [
+			"zdjz_推荐公式"
+		]
+	},
+	"zdjz_重造": {
+		"recognition": "OCR",
+		"roi": [1152, 420, 92, 29],
+		"expected": ["重型制造"],
+		"action": "LongPress",
+		"duration": 13,
+		"post_delay": 800,
+		"next": []
+	},
+	"zdjz_妖精": {
+		"recognition": "OCR",
+		"roi": [56, 486, 120, 122],
+		"expected": ["妖精"],
+		"action": "LongPress",
+		"duration": 13,
+		"post_delay": 1000,
+		"rate_limit": 1500,
+		"next": [
+			"[JumpBack]zdjc_受け取り全部",
+			"zdjz_妖精_1",
+			"戻る主画面_建造"
+		]
+	},
+	"zdjz_装備": {
+		"recognition": "OCR",
+		"roi": [56, 486, 120, 122],
+		"expected": ["装備"],
+		"action": "LongPress",
+		"duration": 13,
+		"post_delay": 800,
+		"next": [
+			"[JumpBack]zdjc_受け取り全部",
+			"zdjz_普通制造",
+			"戻る主画面_建造"
+		]
+	},
+	"zdjz_妖精_1": {
+		"recognition": "OCR",
+		"roi": [1098, 181, 145, 316],
+		"expected": ["開始"],
+		"action": "LongPress",
+		"duration": 13,
+		"post_delay": 800,
+		"next": [
+			"zdjz_推荐公式"
+		]
+	},
+	"zdjz_推荐公式": {
+		"recognition": "OCR",
+		"roi": [237, 441, 56, 31],
+		"expected": ["推荐"],
+		"action": "LongPress",
+		"duration": 13,
+		"post_delay": 800,
+		"next": [
+			"zdjz_收藏夹"
+		]
+	},
+	"zdjz_收藏夹": {
+		"recognition": "OCR",
+		"roi": [34, 226, 135, 67],
+		"expected": ["收藏夹"],
+		"action": "LongPress",
+		"duration": 13,
+		"post_delay": 800,
+		"next": [
+			"zdjz_套用收藏"
+		]
+	},
+	"zdjz_套用收藏": {
+		"recognition": "OCR",
+		"roi": [1014, 147, 132, 51],
+		"expected": ["套用公式"],
+		"action": "LongPress",
+		"duration": 13,
+		"post_delay": 800,
+		"next": [
+			"zdjz_批量制造"
+		]
+	},
+	"zdjz_批量制造": {
+		"recognition": "OCR",
+		"roi": [239, 561, 152, 49],
+		"expected": ["批量制造"],
+		"action": "LongPress",
+		"duration": 13,
+		"post_delay": 800,
+		"next": [
+			"[JumpBack]zdjz_建造キャンセル快建",
+			"zdjz_開始制造"
+		]
+	},
+	"zdjz_建造キャンセル快建": {
+		"recognition": "ColorMatch",
+		"roi": [248, 549, 15, 18],
+		"upper": [255, 181, 0],
+		"lower": [255, 181, 0],
+		"action": "LongPress",
+		"duration": 13,
+		"target": true,
+		"post_delay": 800,
+		"next": []
+	},
+	"zdjz_開始制造": {
+		"recognition": "OCR",
+		"roi": [887, 537, 165, 53],
+		"expected": ["開始制造"],
+		"action": "LongPress",
+		"duration": 13,
+		"post_delay": 1000,
+		"next": [
+			"戻る主画面_建造"
+		]
+	}
+}

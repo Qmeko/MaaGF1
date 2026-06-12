@@ -1,0 +1,160 @@
+﻿{
+	"jp_134配置_部隊配置": {
+		"recognition": "TemplateMatch",
+		"template": "combat/levelUp/13-4/init.png",
+		"roi": [448, 442, 161, 175],
+		"next": [
+			"jp_134配置_1部隊確認",
+			"[JumpBack]jp_134配置_1部隊配置"
+		]
+	},
+
+	"jp_134配置_1部隊確認": {
+		"recognition": "TemplateMatch",
+		"roi": [537, 316, 377, 197],
+		"template": "combat/levelUp/13-4/map_team1.png",
+		"next": [
+			"jp_134配置_2部隊確認",
+			"[JumpBack]jp_134配置_2部隊配置"
+		],
+		"rate_limit": 100,
+		"post_delay": 1000,
+		"pre_delay": 1
+	},
+
+	"jp_134配置_2部隊確認": {
+		"recognition": "TemplateMatch",
+		"roi": [39, 377, 426, 152],
+		"template": "combat/levelUp/13-4/map_team2.png",
+		"next": [
+			"jp_134配置_配置完了"
+		],
+		"rate_limit": 100,
+		"pre_delay": 1,
+		"post_delay": 1000
+	},
+
+	"jp_134配置_配置完了": {
+		"recognition": "TemplateMatch",
+		"roi": [39, 377, 426, 152],
+		"template": "combat/levelUp/13-4/map_team2.png",
+		"rate_limit": 100,
+		"pre_delay": 1,
+		"next": []
+	},
+
+	"jp_134配置_1部隊配置": {
+		"target": [697, 438, 26, 25],
+		"action": "LongPress",
+		"duration": 20,
+		"post_delay": 1500,
+		"next": [
+			"jp_134配置_1部隊配置確定",
+			"jp_134配置_1部隊配置"
+		]
+	},
+
+	"jp_134配置_1部隊配置確定": {
+		"recognition": "OCR",
+		"roi": [1071, 592, 192, 88],
+		"expected": ["確定", "確認"],
+		"action": "LongPress",
+		"duration": 20,
+		"next": []
+	},
+
+	"jp_134配置_2部隊配置": {
+		"recognition": "TemplateMatch",
+		"template": "combat/levelUp/13-4/init.png",
+		"roi": [448, 442, 161, 175],
+		"target": [76, 533, 2, 20],
+		"action": "LongPress",
+		"duration": 20,
+		"post_delay": 1500,
+		"pre_delay": 500,
+		"next": [
+			"jp_134配置_2部隊番号クリック",
+			"jp_134配置_配置完了",
+			"jp_134配置_2部隊配置",
+			"[JumpBack]jp_134配置_重装機場部隊選択"
+		]
+	},
+
+	"jp_134配置_2部隊番号クリック": {
+		"recognition": "OCR",
+		"expected": "2",
+		"roi": [68, 0, 52, 720],
+		"action": "LongPress",
+		"duration": 20,
+		"post_delay": 1500,
+		"next": [
+			"jp_134配置_2部隊配置確定"
+		]
+	},
+
+	"jp_134配置_2部隊配置確定": {
+		"recognition": "OCR",
+		"roi": [1071, 592, 192, 88],
+		"expected": ["確定", "確認"],
+		"action": "LongPress",
+		"post_delay": 1000,
+		"duration": 20,
+		"next": []
+	},
+
+	"jp_134配置_重装機場部隊選択": {
+		"recognition": "OCR",
+		"expected": "部隊選択",
+		"action": "Click"
+	},
+
+	"jp_134配置_弾薬チェック": {
+		"recognition": "TemplateMatch",
+		"template": "combat/levelUp/13-4/init.png",
+		"roi": [448, 442, 161, 175],
+		"target": [76, 533, 2, 20],
+		"action": "LongPress",
+		"duration": 20,
+		"post_delay": 1500,
+		"rate_limit": 200,
+		"threshold": 0.7,
+		"next": [
+			"jp_134配置_弾薬あり",
+			"jp_134配置_弾薬なし",
+			"jp_134配置_弾薬チェック"
+		]
+	},
+
+	"jp_134配置_弾薬なし": {
+		"recognition": "TemplateMatch",
+		"roi": [130, 439, 233, 169],
+		"template": "combat/levelUp/13-4/Gnoammo.png",
+		"threshold": 0.75,
+		"green_mask": true,
+		"next": [
+			"jp_134配置_弾薬なし戻る"
+		]
+	},
+
+	"jp_134配置_弾薬あり": {
+		"recognition": "TemplateMatch",
+		"roi": [130, 439, 233, 169],
+		"template": "combat/levelUp/13-4/Gfullammo.png",
+		"threshold": 0.75,
+		"green_mask": true,
+		"next": [
+			"jp_134編隊_編成クリック"
+		]
+	},
+
+	"jp_134配置_弾薬なし戻る": {
+		"recognition": "OCR",
+		"expected": "キャンセル",
+		"action": "LongPress",
+		"duration": 20,
+		"post_delay": 500,
+		"next": [
+			"jp_134戦闘_作戦開始前初期化"
+		]
+	}
+}

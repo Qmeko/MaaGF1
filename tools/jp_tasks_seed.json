@@ -1,0 +1,39 @@
+[
+  {
+    "name": "0.接続テスト",
+    "label": "$_Task_Smoke",
+    "entry": "!jp_接続テスト",
+    "check": true,
+    "doc": "$_Task_Smoke_Doc",
+    "repeatable": false,
+    "repeat_count": 1
+  },
+  {
+    "name": "1.基地 - 宿舎いいね",
+    "label": "$_Task_Dormitory",
+    "entry": "!jp_宿舎いいね",
+    "check": false,
+    "doc": "$_Task_Dormitory_Doc",
+    "repeatable": true,
+    "repeat_count": -1
+  },
+  {
+    "name": "2.13-4周回（JP校正）",
+    "label": "$_Task_134",
+    "entry": "!jp_134総流程",
+    "check": false,
+    "doc": "$_Task_134_Doc",
+    "repeatable": true,
+    "repeat_count": 30,
+    "option": ["134_loops"]
+  },
+  {
+    "name": "共通 - 主画面へ戻る",
+    "label": "$_Task_ReturnMain",
+    "entry": "!jp_返回主界面",
+    "check": false,
+    "doc": "$_Task_ReturnMain_Doc",
+    "repeatable": false,
+    "repeat_count": 1
+  }
+]

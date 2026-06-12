@@ -1,0 +1,66 @@
+﻿{
+	"!jp_134総流程": {
+		"recognition": "DirectHit",
+		"action": "DoNothing",
+		"next": [
+			"jp_134進入_13-4クリック",
+			"jp_134配置_配置完了",
+			"jp_134配置_部隊配置",
+			"jp_134配置_弾薬チェック",
+			"[JumpBack]jp_134マップ_右上スワイプ",
+			"[JumpBack]jp_134共通_戦闘復帰"
+		]
+	},
+
+	"jp_134進入_13-4クリック": {
+		"recognition": "TemplateMatch",
+		"template": "combat/levelUp/13-4/run134.png",
+		"roi": [393, 300, 834, 419],
+		"threshold": 0.8,
+		"action": "LongPress",
+		"duration": 20,
+		"post_delay": 1000,
+		"next": [
+			"jp_134進入_通常作戦",
+			"jp_134進入_13-4クリック"
+		]
+	},
+
+	"jp_134進入_通常作戦": {
+		"recognition": "OCR",
+		"roi": [828, 527, 329, 142],
+		"expected": ["通常作戦", "通常"],
+		"action": "LongPress",
+		"duration": 20,
+		"post_delay": 3000,
+		"next": [
+			"jp_134配置_部隊配置",
+			"jp_134進入_通常作戦",
+			"jp_134進入_13-4クリック",
+			"[JumpBack]jp_134マップ_右上スワイプ",
+			"[JumpBack]jp_134共通_戦闘復帰"
+		],
+		"timeout": 600000
+	},
+
+	"jp_134進入_作戦任務タブ": {
+		"recognition": "OCR",
+		"roi": [42, 97, 149, 353],
+		"expected": "作戦任務",
+		"action": "LongPress",
+		"duration": 20,
+		"next": [
+			"jp_134進入_13-4クリック"
+		],
+		"timeout": 600000
+	},
+
+	"jp_134共通_戦闘復帰": {
+		"recognition": "OCR",
+		"roi": [944, 571, 335, 148],
+		"expected": "作戦開始",
+		"action": "DoNothing",
+		"timeout": 600000,
+		"next": []
+	}
+}

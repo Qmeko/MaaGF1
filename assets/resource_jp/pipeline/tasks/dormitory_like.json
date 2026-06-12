@@ -1,0 +1,210 @@
+{
+	"!jp_宿舎いいね": {
+		"timeout": 180000,
+		"next": [
+			"jp_dorm_フレンドタブ",
+			"jp_dorm_参観確認",
+			"jp_dorm_訪問ボタンクリック"
+		]
+	},
+
+	"jp_dorm_訪問ボタンクリック": {
+		"recognition": "OCR",
+		"roi": [2, 619, 199, 89],
+		"expected": "Visit",
+		"timeout": 10000,
+		"action": "Click",
+		"target": [90, 660, 1, 1],
+		"post_delay": 1500,
+		"next": [
+			"jp_dorm_フレンドタブ",
+			"jp_dorm_訪問ボタンクリック"
+		]
+	},
+
+	"jp_dorm_フレンドタブ": {
+		"recognition": "OCR",
+		"roi": [571, 597, 209, 123],
+		"expected": "フレンド",
+		"timeout": 10000,
+		"action": "Click",
+		"next": [
+			"jp_dorm_フレンドタブ",
+			"jp_dorm_並び替え"
+		]
+	},
+
+	"jp_dorm_並び替え": {
+		"recognition": "OCR",
+		"roi": [830, 104, 219, 142],
+		"expected": "並び替え",
+		"pre_delay": 500,
+		"timeout": 10000,
+		"action": "Click",
+		"post_delay": 1500,
+		"next": [
+			"jp_dorm_宿舎数ソート",
+			"jp_dorm_並び替え"
+		]
+	},
+
+	"jp_dorm_宿舎数ソート": {
+		"recognition": "OCR",
+		"roi": [995, 396, 280, 171],
+		"expected": "宿舎数",
+		"timeout": 10000,
+		"action": "Click",
+		"next": [
+			"jp_dorm_宿舎数ソート",
+			"jp_dorm_最初のフレンドクリック"
+		]
+	},
+
+	"jp_dorm_最初のフレンドクリック": {
+		"recognition": "OCR",
+		"roi": [989, 106, 220, 142],
+		"expected": "宿舎数",
+		"timeout": 10000,
+		"action": "Click",
+		"target": [622, 219, 136, 57],
+		"next": [
+			"jp_dorm_最初のフレンドクリック",
+			"jp_dorm_宿舎に入る"
+		]
+	},
+
+	"jp_dorm_宿舎に入る": {
+		"recognition": "OCR",
+		"roi": [929, 568, 237, 152],
+		"expected": "参観",
+		"timeout": 10000,
+		"action": "Click",
+		"next": [
+			"jp_dorm_宿舎に入る",
+			"!jp_宿舎いいね"
+		]
+	},
+
+	"jp_dorm_参観確認": {
+		"recognition": "OCR",
+		"roi": [2, 619, 199, 89],
+		"expected": "参観",
+		"timeout": 3000,
+		"action": "DoNothing",
+		"next": [
+			"jp_dorm_コンデンサ盗む",
+			"jp_dorm_いいねクリック",
+			"jp_dorm_次の宿舎へ"
+		]
+	},
+
+	"jp_dorm_コンデンサ盗む": {
+		"recognition": "TemplateMatch",
+		"roi": [89, 370, 329, 88],
+		"green_mask": true,
+		"rate_limit": 100,
+		"template": "dormitory/Gbattery1.png",
+		"timeout": 5000,
+		"action": "Click",
+		"threshold": 0.75,
+		"post_delay": 1000,
+		"next": [
+			"jp_dorm_コンデンサ盗む成功",
+			"jp_dorm_コンデンサ盗む"
+		]
+	},
+
+	"jp_dorm_コンデンサ盗む成功": {
+		"recognition": "OCR",
+		"roi": [611, 489, 99, 62],
+		"rate_limit": 100,
+		"expected": "閉じる",
+		"timeout": 5000,
+		"action": "Click",
+		"next": [
+			"jp_dorm_いいねクリック",
+			"jp_dorm_コンデンサ盗む成功"
+		]
+	},
+
+	"jp_dorm_いいねクリック": {
+		"recognition": "OCR",
+		"roi": [1035, 575, 245, 145],
+		"expected": "いいね",
+		"rate_limit": 100,
+		"timeout": 5000,
+		"action": "Click",
+		"post_delay": 800,
+		"next": [
+			"jp_dorm_いいねクリック",
+			"jp_dorm_次の宿舎へ"
+		]
+	},
+
+	"jp_dorm_次の宿舎へ": {
+		"recognition": "OCR",
+		"roi": [1035, 575, 245, 145],
+		"expected": "コメント",
+		"timeout": 5000,
+		"action": "Click",
+		"rate_limit": 100,
+		"target": [205, 635, 59, 57],
+		"post_delay": 1500,
+		"next": [
+			"jp_dorm_完了戻る確認",
+			"jp_dorm_フレンドタブ",
+			"jp_dorm_参観確認"
+		]
+	},
+
+	"jp_dorm_完了戻る確認": {
+		"recognition": "OCR",
+		"roi": [1035, 575, 245, 145],
+		"expected": "コメント",
+		"timeout": 3000,
+		"next": [
+			"jp_dorm_戻るクリック"
+		]
+	},
+
+	"jp_dorm_戻るクリック": {
+		"recognition": "TemplateMatch",
+		"template": [
+			"dormitory/Gback1.png",
+			"dormitory/Gback2.png"
+		],
+		"roi": [41, 8, 126, 87],
+		"green_mask": true,
+		"timeout": 10000,
+		"action": "Click",
+		"post_wait_freezes": 500,
+		"next": [
+			"jp_dorm_基地確認",
+			"jp_dorm_戻るクリック"
+		]
+	},
+
+	"jp_dorm_基地確認": {
+		"recognition": "OCR",
+		"roi": [833, 83, 405, 195],
+		"expected": ["基地", "拠点"],
+		"timeout": 10000,
+		"next": []
+	},
+
+	"!jp_ハートクリック": {
+		"roi": [0, 220, 1280, 500],
+		"recognition": "TemplateMatch",
+		"template": "dormitory/Gheart.png",
+		"threshold": 0.7,
+		"action": "Click",
+		"rate_limit": 10,
+		"pre_delay": 1,
+		"green_mask": true,
+		"post_delay": 1,
+		"next": [
+			"!jp_ハートクリック"
+		],
+		"timeout": 60000
+	}
+}

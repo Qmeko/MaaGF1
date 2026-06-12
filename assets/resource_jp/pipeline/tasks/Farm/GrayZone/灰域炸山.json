@@ -1,0 +1,418 @@
+﻿{
+	"灰域_炸山_口粮定位": {
+		"recognition": {
+			"type": "TemplateMatch",
+			"param": {
+				"roi": "灰域_炸山_重装小队",
+				"roi_offset": [17, -12, 29, 21],
+				"template": [
+					"./dlz_greyzone/炸山_口粮.png"
+				],
+				"green_mask": true
+			}
+		},
+		"action": {
+			"type": "DoNothing",
+			"param": {}
+		},
+		"next": [
+			"灰域_炸山_补给完了",
+			{"name": "灰域_炸山_閉じる计划模式", "jump_back": true},
+			{"name": "灰域_炸山_补给", "jump_back": true},
+			{"name": "灰域_炸山_点击重装小队", "jump_back": true}
+		]
+	},
+	"灰域_炸山_流程": {
+		"recognition": {
+			"type": "ColorMatch",
+			"param": {
+				"roi": [1164, 29, 67, 46],
+				"lower": [
+					[197, 64, 18]
+				],
+				"upper": [
+					[237, 104, 58]
+				],
+				"count": 50
+			}
+		},
+		"action": {
+			"type": "DoNothing",
+			"param": {}
+		},
+		"next": [
+			"灰域_炸山_计划模式中",
+			{"name": "灰域_炸山_閉じる代理", "jump_back": true},
+			{"name": "灰域_炸山_计划模式", "jump_back": true}
+		]
+	},
+	"灰域_炸山_閉じる代理": {
+		"recognition": {
+			"type": "ColorMatch",
+			"param": {
+				"roi": [1164, 29, 67, 46],
+				"lower": [
+					[197, 64, 18]
+				],
+				"upper": [
+					[237, 104, 58]
+				],
+				"count": 50
+			}
+		},
+		"action": {
+			"type": "LongPress",
+			"param": {"duration": 20}
+		}
+	},
+	"灰域_炸山_计划模式": {
+		"recognition": {
+			"type": "ColorMatch",
+			"param": {
+				"roi": [2, 615, 47, 32],
+				"lower": [
+					[245, 245, 245]
+				],
+				"upper": [
+					[255, 255, 255]
+				],
+				"count": 30
+			}
+		},
+		"action": {
+			"type": "LongPress",
+			"param": {
+				"duration": 20,
+				"target": [35, 615, 46, 32]
+			}
+		}
+	},
+	"灰域_炸山_计划模式中": {
+		"recognition": {
+			"type": "ColorMatch",
+			"param": {
+				"roi": [35, 615, 46, 32],
+				"lower": [
+					[240, 180, 40]
+				],
+				"upper": [
+					[255, 210, 90]
+				],
+				"count": 20
+			}
+		},
+		"action": {
+			"type": "DoNothing",
+			"param": {}
+		},
+		"inverse": false,
+		"next": [
+			"灰域_炸山_地图缩小"
+		]
+	},
+	"灰域_炸山_重装小队": {
+		"recognition": {
+			"type": "TemplateMatch",
+			"param": {
+				"template": [
+					"./dlz_greyzone/重装小队.png"
+				],
+				"roi": [485, 194, 200, 214],
+				"green_mask": true
+			}
+		},
+		"action": {
+			"type": "DoNothing",
+			"param": {}
+		},
+		"next": [
+			"灰域_炸山_口粮定位"
+		]
+	},
+	"灰域_炸山_地图缩小": {
+		"recognition": {
+			"type": "DirectHit",
+			"param": {}
+		},
+		"action": "Scroll",
+		"target": [500, 500],
+		// Note: 理论上来说，应该使用`"dy": -120*N`的方式直接实现发送N次向下滑动，但是由于某种神秘力量(不知道为什么)，因此这里需要使用repeat*times的方式实现
+		"dy": -120,
+		"repeat": 100,
+		"pre_delay": 0,
+		"post_delay": 0,
+		"next": [
+			"灰域_炸山_地图左下角"
+		]
+	},
+	"灰域_炸山_地图左下角": {
+		"recognition": {
+			"type": "DirectHit",
+			"param": {}
+		},
+		"action": {
+			"type": "Swipe",
+			"param": {
+				"begin": [287, 484, 48, 47],
+				"end": [
+					[838, 120, 25, 23]
+				],
+				"duration": [200]
+			}
+		},
+		"next": [
+			"灰域_炸山_重装小队"
+		]
+	},
+	"灰域_炸山_閉じる计划模式": {
+		"recognition": {
+			"type": "ColorMatch",
+			"param": {
+				"roi": [35, 615, 46, 32],
+				"lower": [
+					[240, 180, 40]
+				],
+				"upper": [
+					[255, 210, 90]
+				],
+				"count": 20
+			}
+		},
+		"action": {
+			"type": "LongPress",
+			"param": {"duration": 20}
+		}
+	},
+	"灰域_炸山_点击重装小队": {
+		"recognition": {
+			"type": "TemplateMatch",
+			"param": {
+				"template": [
+					"./dlz_greyzone/重装小队.png"
+				],
+				"roi": [485, 194, 200, 214],
+				"green_mask": true
+			}
+		},
+		"action": {
+			"type": "LongPress",
+			"param": {
+				"duration": 20,
+				"target_offset": [-13, 24, -39, -56]
+			}
+		},
+		"post_wait_freezes": {
+			"time": 200,
+			"target": [505, 616, 183, 72]
+		}
+	},
+	"灰域_炸山_补给": {
+		"recognition": {
+			"type": "OCR",
+			"param": {
+				"expected": ["补", "给"],
+				"roi": [1157, 583, 81, 51]
+			}
+		},
+		"action": {
+			"type": "LongPress",
+			"param": {"duration": 20}
+		}
+	},
+	"灰域_炸山_补给完了": {
+		"recognition": {
+			"type": "ColorMatch",
+			"param": {
+				"roi": "灰域_炸山_口粮定位",
+				"lower": [
+					[52, 52, 52]
+				],
+				"upper": [
+					[58, 58, 58]
+				],
+				"count": 13,
+				"connected": true
+			}
+		},
+		"action": {
+			"type": "DoNothing",
+			"param": {}
+		},
+		"inverse": true,
+		"next": [
+			"灰域_炸山_炸山结束",
+			{"name": "灰域_炸山_选中重装小队", "jump_back": true},
+			{"name": "灰域_炸山_颜色判断1", "jump_back": true},
+			{"name": "灰域_炸山_补给_閉じる", "jump_back": true},
+			{"name": "灰域_炸山_颜色判断2", "jump_back": true}
+		]
+	},
+	"灰域_炸山_颜色判断1": {
+		"recognition": {
+			"type": "ColorMatch",
+			"param": {
+				"roi": "灰域_炸山_重装小队",
+				"roi_offset": [95, -177, 305, 365],
+				"lower": [
+					[242, 29, 31]
+				],
+				"upper": [
+					[255, 49, 51]
+				],
+				"count": 80,
+				"connected": true
+			}
+		},
+		"action": {
+			"type": "LongPress",
+			"param": {"duration": 20}
+		},
+		"post_wait_freezes": {
+			"time": 200,
+			"target": "灰域_炸山_颜色判断1",
+			"target_offset": [-50, -50, 100, 100],
+			"threshold": 0.7
+		},
+		"post_delay": 200
+	},
+	"灰域_炸山_炸山结束": {
+		"recognition": {
+			"type": "ColorMatch",
+			"param": {
+				"roi": "灰域_炸山_口粮定位",
+				"lower": [
+					[122, 209, 225]
+				],
+				"upper": [
+					[182, 255, 255]
+				],
+				"count": 10
+			}
+		},
+		"action": {
+			"type": "DoNothing",
+			"param": {}
+		},
+		"inverse": true,
+		"next": [
+			{"name": "灰域_代理作戦_確認", "jump_back": true},
+			{"name": "灰域_炸山_执行代理作戦", "jump_back": true},
+			"灰域_炸山_关卡结束",
+			"灰域_炸山_代理已完了"
+		]
+	},
+	"灰域_炸山_执行代理作戦": {
+		"recognition": {
+			"type": "OCR",
+			"param": {
+				"expected": ["代理作戦"],
+				"roi": [930, 635, 152, 64]
+			}
+		},
+		"action": {
+			"type": "LongPress",
+			"param": {"duration": 20}
+		}
+	},
+	"灰域_炸山_选中重装小队": {
+		"recognition": {
+			"type": "ColorMatch",
+			"param": {
+				"roi": "灰域_炸山_重装小队",
+				"lower": [
+					[0, 0, 0]
+				],
+				"upper": [
+					[10, 10, 10]
+				],
+				"count": 2500,
+				"connected": true,
+				"roi_offset": [-424, -3, 15, -14]
+			}
+		},
+		"action": {
+			"type": "LongPress",
+			"param": {
+				"duration": 20,
+				"target_offset": [-13, 24, -39, -56],
+				"target": "灰域_炸山_重装小队"
+			}
+		}
+	},
+	"灰域_炸山_关卡结束": {
+		"recognition": {
+			"type": "ColorMatch",
+			"param": {
+				"roi": [1139, 115, 94, 58],
+				"lower": [
+					[197, 64, 18]
+				],
+				"upper": [
+					[237, 104, 58]
+				],
+				"count": 100
+			}
+		},
+		"action": {
+			"type": "DoNothing",
+			"param": {}
+		}
+	},
+	"灰域_炸山_代理已完了": {
+		"recognition": {
+			"type": "OCR",
+			"param": {
+				"expected": ["已完了"],
+				"roi": [1011, 614, 124, 53]
+			}
+		},
+		"action": {
+			"type": "DoNothing",
+			"param": {}
+		}
+	},
+	"灰域_炸山_补给_閉じる": {
+		"recognition": {
+			"type": "OCR",
+			"param": {
+				"expected": ["补", "给"],
+				"roi": [1157, 583, 81, 51]
+			}
+		},
+		"action": {
+			"type": "LongPress",
+			"param": {
+				"duration": 20,
+				"target": "灰域_炸山_重装小队",
+				"target_offset": [-13, 24, -39, -56]
+			}
+		}
+	},
+	"灰域_炸山_颜色判断2": {
+		"recognition": {
+			"type": "ColorMatch",
+			"param": {
+				"roi": "灰域_炸山_重装小队",
+				"roi_offset": [95, -177, 305, 365],
+				"lower": [
+					[123, 21, 22]
+				],
+				"upper": [
+					[143, 50, 50]
+				],
+				"count": 30,
+				"connected": true
+			}
+		},
+		"action": {
+			"type": "LongPress",
+			"param": {"duration": 20}
+		},
+		"post_wait_freezes": {
+			"time": 200,
+			"target": "灰域_炸山_颜色判断2",
+			"target_offset": [-50, -50, 100, 100]
+		},
+		"post_delay": 200
+	}
+}

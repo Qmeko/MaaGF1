@@ -1,0 +1,232 @@
+﻿{
+	"134戦闘_開始作戦前初始化": {
+		"recognition": "TemplateMatch",
+		"timeout": 600000,
+		"roi": [70, 468, 157, 108],
+		"threshold": 0.4,
+		"template": "combat/levelUp/13-4/map_team2.png",
+		"next": [
+			"134戦闘_開始作戦",
+			"[JumpBack]134地图初始化_拖到右上角"
+		]
+	},
+	"134戦闘_開始作戦": {
+		"recognition": "OCR",
+		"roi": [944, 571, 335, 148],
+		"expected": ["開始作戦"],
+		"action": "LongPress",
+		"duration": 20,
+		"next": [
+			"134戦闘_点击2队单vv准备补给"
+		],
+		"timeout": 600000
+	},
+	"134戦闘_確認開始作戦": {
+		"recognition": "OCR",
+		"roi": [944, 571, 335, 148],
+		"expected": ["结束"],
+		"next": [
+			"134戦闘_点击2队单vv准备补给"
+		]
+	},
+	"134戦闘_点击2队单vv准备补给": {
+		"target": [76, 533, 2, 20],
+		"action": "LongPress",
+		"duration": 20,
+		"pre_delay": 1000,
+		"next": [
+			"134戦闘_開始作戦假点击",
+			"134戦闘_点击补给",
+			"134戦闘_点击2队单vv准备补给"
+		]
+	},
+	"134戦闘_開始作戦假点击": {
+		"recognition": "OCR",
+		"roi": [700, 613, 169, 52],
+		"expected": ["一键", "修复"],
+		"target": [1147, 627, 31, 18],
+		"action": "LongPress",
+		"duration": 20,
+		"next": [
+			"134戦闘_開始作戦"
+		]
+	},
+	"134戦闘_点击补给": {
+		"recognition": "OCR",
+		"roi": [1141, 535, 117, 55],
+		"expected": ["补给"],
+		"action": "LongPress",
+		"duration": 20,
+		"post_delay": 500,
+		"next": [
+			"134戦闘_点击1队图标",
+			"[JumpBack]134地图初始化_长按修正"
+		]
+	},
+	"134戦闘_点击1队图标": {
+		"target": [697, 438, 26, 25],
+		"action": "LongPress",
+		"duration": 20,
+		"post_wait_freezes": 1,
+		"post_delay": 800,
+		"rate_limit": 200,
+		"next": [
+			"134戦闘_出现妖精技能释放",
+			"134戦闘_点击1队キャンセル",
+			"134戦闘_点击1队图标",
+			"[JumpBack]134地图初始化_长按修正"
+		]
+	},
+	"134戦闘_出现妖精技能释放": {
+		"recognition": "OCR",
+		"expected": ["释放"],
+		"roi": [1075, 156, 204, 437],
+		"post_delay": 500,
+		"next": [
+			"134戦闘_点击计划模式"
+		]
+	},
+	"134戦闘_点击1队キャンセル": {
+		"recognition": "OCR",
+		"roi": [1074, 601, 181, 73],
+		"expected": ["キャンセル"],
+		"action": "LongPress",
+		"duration": 20,
+		"next": [
+			"134戦闘_点击计划模式"
+		]
+	},
+	"134戦闘_点击计划模式": {
+		"target": [61, 625, 28, 9],
+		"action": "LongPress",
+		"duration": 20,
+		"post_delay": 500,
+		"next": [
+			"134戦闘_巡游者"
+		]
+	},
+	"134戦闘_巡游者": {
+		"target": [614, 536, 9, 9],
+		"action": "LongPress",
+		"duration": 20,
+		"rate_limit": 200,
+		"next": [
+			"134戦闘_巡游者_確認",
+			"134戦闘_巡游者"
+		]
+	},
+	"134戦闘_巡游者_確認": {
+		"recognition": "TemplateMatch",
+		"roi": [969, 650, 94, 69],
+		"template": [
+			"combat/levelUp/13-4/Gap3.png"
+		],
+		"threshold": 0.8,
+		"green_mask": true,
+		"rate_limit": 200,
+		"next": []
+	},
+	"134戦闘_胡蜂": {
+		"target": [702, 629, 12, 7],
+		"action": "LongPress",
+		"duration": 20,
+		"rate_limit": 200,
+		"next": [
+			"134戦闘_胡蜂_確認",
+			"134戦闘_胡蜂"
+		]
+	},
+	"134戦闘_胡蜂_確認": {
+		"recognition": "TemplateMatch",
+		"roi": [969, 650, 94, 69],
+		"template": [
+			"combat/levelUp/13-4/Gap0.png"
+		],
+		"threshold": 0.8,
+		"green_mask": true,
+		"rate_limit": 200,
+		"next": [
+			"134戦闘_下一回合"
+		]
+	},
+	"134戦闘_钢狮": {
+		"target": [698, 710, 24, 9],
+		"action": "LongPress",
+		"duration": 20,
+		"rate_limit": 200,
+		"next": [
+			"134戦闘_钢狮_確認",
+			"134戦闘_钢狮"
+		]
+	},
+	"134戦闘_钢狮_確認": {
+		"recognition": "TemplateMatch",
+		"roi": [969, 650, 94, 69],
+		"template": [
+			"combat/levelUp/13-4/Gap0.png"
+		],
+		"threshold": 0.7,
+		"green_mask": true,
+		"rate_limit": 200,
+		"next": [
+			"134戦闘_下一回合"
+		]
+	},
+	"134戦闘_下一回合": {
+		"target": [1162, 544, 28, 18],
+		"action": "LongPress",
+		"duration": 20,
+		"post_delay": 200,
+		"threshold": 0.8,
+		"next": [
+			"134戦闘_下一回合_確認",
+			"134戦闘_下一回合"
+		]
+	},
+	"134戦闘_下一回合_確認": {
+		"recognition": "OCR",
+		"roi": [983, 525, 82, 54],
+		"expected": ["キャンセル"],
+		"rate_limit": 500,
+		"next": [
+			"134戦闘_执行计划"
+		]
+	},
+	"134戦闘_终点": {
+		"target": [609, 713, 21, 6],
+		"action": "LongPress",
+		"duration": 20,
+		"post_delay": 200,
+		"rate_limit": 200,
+		"green_mask": true,
+		"threshold": 0.8,
+		"next": [
+			"134戦闘_终点_確認",
+			"134戦闘_终点"
+		]
+	},
+	"134戦闘_终点_確認": {
+		"recognition": "TemplateMatch",
+		"roi": [969, 650, 94, 69],
+		"threshold": 0.8,
+		"template": [
+			"combat/levelUp/13-4/Gap-5.png"
+		],
+		"green_mask": true,
+		"rate_limit": 500,
+		"next": [
+			"134戦闘_执行计划"
+		]
+	},
+	"134戦闘_执行计划": {
+		"target": [1105, 627, 153, 74],
+		"action": "LongPress",
+		"duration": 20,
+		"timeout": 600000,
+		"next": [
+			"134重置_提前再次作戦",
+			"134重置_再次作戦",
+			"[JumpBack]public_不中断计划"
+		]
+	}
+}

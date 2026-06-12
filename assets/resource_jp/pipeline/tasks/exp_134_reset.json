@@ -1,0 +1,89 @@
+{
+	"jp_134リセット_提前再戦": {
+		"recognition": "OCR",
+		"roi": [68, 667, 75, 45],
+		"expected": "20",
+		"post_delay": 1,
+		"pre_delay": 1,
+		"rate_limit": 500,
+		"timeout": 600000,
+		"next": [
+			"jp_134リセット_連打開始"
+		]
+	},
+
+	"jp_134リセット_再戦": {
+		"recognition": "OCR",
+		"roi": [277, 572, 188, 73],
+		"expected": "再戦",
+		"post_delay": 1,
+		"pre_delay": 1,
+		"rate_limit": 500,
+		"timeout": 600000,
+		"next": [
+			"jp_134リセット_再戦連打1"
+		]
+	},
+
+	"jp_134リセット_再戦連打1": {
+		"recognition": "OCR",
+		"roi": [277, 572, 188, 73],
+		"expected": "再戦",
+		"target": [375, 618, 70, 12],
+		"action": "LongPress",
+		"duration": 20,
+		"post_delay": 1,
+		"pre_delay": 1,
+		"next": [
+			"jp_134リセット_連打開始"
+		],
+		"timeout": 600000
+	},
+
+	"jp_134リセット_連打開始": {
+		"post_delay": 1,
+		"pre_delay": 1,
+		"recognition": "DirectHit",
+		"action": "DoNothing",
+		"next": [
+			"jp_134リセット_連打2"
+		]
+	},
+
+	"jp_134リセット_連打2":  {"target": [400, 624, 1, 1], "action": "LongPress", "duration": 20, "post_delay": 10, "pre_delay": 1, "next": ["jp_134リセット_連打3"]},
+	"jp_134リセット_連打3":  {"target": [400, 624, 1, 1], "action": "LongPress", "duration": 20, "post_delay": 10, "pre_delay": 1, "next": ["jp_134リセット_連打4"]},
+	"jp_134リセット_連打4":  {"target": [400, 624, 1, 1], "action": "LongPress", "duration": 20, "post_delay": 10, "pre_delay": 1, "next": ["jp_134リセット_連打5"]},
+	"jp_134リセット_連打5":  {"target": [400, 624, 1, 1], "action": "LongPress", "duration": 20, "post_delay": 10, "next": ["jp_134リセット_連打6"]},
+	"jp_134リセット_連打6":  {"target": [400, 624, 1, 1], "action": "LongPress", "duration": 20, "post_delay": 10, "next": ["jp_134リセット_連打7"]},
+	"jp_134リセット_連打7":  {"target": [400, 624, 1, 1], "action": "LongPress", "duration": 20, "post_delay": 10, "next": ["jp_134リセット_連打8"]},
+	"jp_134リセット_連打8":  {"target": [400, 624, 1, 1], "action": "LongPress", "duration": 20, "post_delay": 10, "next": ["jp_134リセット_連打9"]},
+	"jp_134リセット_連打9":  {"target": [400, 624, 1, 1], "action": "LongPress", "duration": 100, "post_delay": 200},
+
+	"jp_134リセット_キャラ取得": {
+		"recognition": "TemplateMatch",
+		"roi": [866, 2, 413, 619],
+		"target": [400, 624, 1, 1],
+		"template": [
+			"combat/levelUp/13-4/doll_get0.png",
+			"combat/levelUp/13-4/doll_get2.png",
+			"combat/levelUp/13-4/doll_get3.png",
+			"combat/levelUp/13-4/doll_get4.png"
+		],
+		"action": "LongPress",
+		"duration": 20,
+		"post_delay": 500,
+		"rate_limit": 100,
+		"threshold": 0.65,
+		"timeout": 40000
+	},
+
+	"jp_134リセット_単発再戦": {
+		"recognition": "OCR",
+		"target": [375, 618, 70, 12],
+		"roi": [277, 572, 188, 73],
+		"action": "LongPress",
+		"duration": 20,
+		"expected": "再戦",
+		"rate_limit": 1000
+	}
+}

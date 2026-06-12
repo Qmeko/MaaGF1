@@ -456,3 +456,7 @@ tools/hack/**/*.json
 
 # Scons
 .sconsign.dblite
+# MaaGF1 JP local runtime (do not commit)
+install/
+logs/
+maagf1-docs/site/

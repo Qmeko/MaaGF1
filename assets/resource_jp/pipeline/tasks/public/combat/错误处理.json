@@ -1,0 +1,263 @@
+﻿{
+	"错误处理": {
+		"recognition": {
+			"type": "DirectHit",
+			"param": {}
+		},
+		"action": {
+			"type": "DoNothing",
+			"param": {}
+		},
+		"timeout": 2000,
+		"next": [
+			{"name": "错误_戻る作戦", "jump_back": true},
+			{"name": "错误_後方支援出征", "jump_back": true},
+			"错误_游戏主页",
+			{"name": "错误_游戏重登", "jump_back": true},
+			{"name": "错误_閉じる代理_确定", "jump_back": true},
+			{"name": "错误_弹粮耗尽", "jump_back": true},
+			{"name": "错误_戦闘结束界面", "jump_back": true},
+			{"name": "错误_閉じる代理", "jump_back": true},
+			{"name": "错误_掉落", "jump_back": true},
+			{"name": "错误_esc", "jump_back": true},
+			{"name": "错误_点击", "jump_back": true}
+		]
+	},
+	"错误_游戏主页": {
+		"recognition": {
+			"type": "OCR",
+			"param": {
+				"expected": "戦闘",
+				"roi": [899, 384, 126, 81]
+			}
+		},
+		"action": {
+			"type": "DoNothing",
+			"param": {}
+		},
+		"post_delay": 1000
+	},
+	"错误_游戏重登": {
+		"recognition": {
+			"type": "OCR",
+			"param": {
+				"expected": ["登录", "開始"],
+				"roi": [532, 400, 213, 277],
+				"order_by": "Vertical"
+			}
+		},
+		"action": {
+			"type": "LongPress",
+			"param": {"duration": 20}
+		},
+		"post_delay": 1000
+	},
+	"错误_戻る作戦": {
+		"recognition": {
+			"type": "OCR",
+			"param": {
+				"expected": ["戻る", "作戦"],
+				"roi": [1105, 519, 155, 62]
+			}
+		},
+		"action": {
+			"type": "LongPress",
+			"param": {"duration": 20}
+		},
+		"post_delay": 1000,
+		"next": [
+			{"name": "错误_重新作戦", "jump_back": true},
+			{"name": "错误_终止作戦", "jump_back": true},
+			"错误_開始作戦界面",
+			"错误_戻る作戦"
+		]
+	},
+	"错误_终止作戦": {
+		"recognition": {
+			"type": "OCR",
+			"param": {
+				"roi": [267, 43, 96, 41],
+				"expected": ["终止", "作戦"]
+			}
+		},
+		"action": {
+			"type": "LongPress",
+			"param": {"duration": 20}
+		}
+	},
+	"错误_重新作戦": {
+		"recognition": {
+			"type": "OCR",
+			"param": {
+				"expected": ["重新", "作戦"],
+				"roi": [421, 464, 138, 55]
+			}
+		},
+		"action": {
+			"type": "LongPress",
+			"param": {"duration": 20}
+		}
+	},
+	"错误_開始作戦界面": {
+		"recognition": {
+			"type": "OCR",
+			"param": {
+				"expected": ["開始", "作戦"],
+				"roi": [1042, 617, 182, 71]
+			}
+		},
+		"action": {
+			"type": "DoNothing",
+			"param": {}
+		}
+	},
+	"错误_弹粮耗尽": {
+		"recognition": {
+			"type": "OCR",
+			"param": {
+				"expected": ["弾薬", "耗尽"],
+				"roi": [502, 259, 330, 61]
+			}
+		},
+		"action": {
+			"type": "LongPress",
+			"param": {
+				"duration": 20,
+				"target": [503, 477, 79, 34]
+			}
+		}
+	},
+	"错误_esc": {
+		"recognition": {
+			"type": "DirectHit",
+			"param": {}
+		},
+		"action": {
+			"type": "Key",
+			"param": {"key": 27}
+		},
+		"post_wait_freezes": 500,
+		"post_delay": 500,
+		"max_hit": 10
+	},
+	"错误_後方支援出征": {
+		"recognition": {
+			"type": "OCR",
+			"param": {
+				"expected": ["後方支援", "支援"],
+				"roi": [142, 13, 183, 51]
+			}
+		},
+		"action": {
+			"type": "LongPress",
+			"param": {
+				"duration": 20,
+				"target": [1112, 667, 52, 20]
+			}
+		},
+		"next": [
+			{"name": "错误_後方支援出征确定", "jump_back": true},
+			"错误_游戏主页",
+			"错误_後方支援出征"
+		]
+	},
+	"错误_後方支援出征确定": {
+		"recognition": {
+			"type": "OCR",
+			"param": {
+				"expected": ["上限", "无法获取"],
+				"roi": [332, 242, 618, 98]
+			}
+		},
+		"action": {
+			"type": "LongPress",
+			"param": {
+				"duration": 20,
+				"target": [736, 477, 68, 39]
+			}
+		}
+	},
+	"错误_戦闘结束界面": {
+		"recognition": {
+			"type": "OCR",
+			"param": {
+				"expected": ["级"],
+				"roi": [0, 597, 135, 121]
+			}
+		},
+		"action": {
+			"type": "LongPress",
+			"param": {
+				"duration": 20,
+				"target": [372, 615, 1, 1]
+			}
+		}
+	},
+	"错误_閉じる代理": {
+		"recognition": {
+			"type": "ColorMatch",
+			"param": {
+				"roi": [1139, 29, 94, 144],
+				"lower": [
+					[197, 64, 18]
+				],
+				"upper": [
+					[237, 104, 58]
+				],
+				"count": 1000,
+				"connected": true
+			}
+		},
+		"action": {
+			"type": "LongPress",
+			"param": {"duration": 20}
+		}
+	},
+	"错误_閉じる代理_确定": {
+		"recognition": {
+			"type": "OCR",
+			"param": {
+				"expected": ["中断", "计划"],
+				"roi": [509, 263, 233, 87]
+			}
+		},
+		"action": {
+			"type": "LongPress",
+			"param": {
+				"duration": 20,
+				"target": [732, 479, 59, 39]
+			}
+		}
+	},
+	"错误_掉落": {
+		"recognition": {
+			"type": "OCR",
+			"param": {
+				"expected": ["枪", "种"],
+				"roi": [18, 90, 286, 148]
+			}
+		},
+		"action": {
+			"type": "LongPress",
+			"param": {
+				"duration": 20,
+				"target": [372, 615, 1, 1]
+			}
+		}
+	},
+	"错误_点击": {
+		"recognition": {
+			"type": "DirectHit",
+			"param": {}
+		},
+		"action": {
+			"type": "LongPress",
+			"param": {
+				"target": [372, 615, 1, 1],
+				"duration": 20
+			}
+		},
+		"post_delay": 500,
+		"max_hit": 3
+	}
+}

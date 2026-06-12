@@ -1,0 +1,32 @@
+{
+	"!jp_接続テスト": {
+		"timeout": 15000,
+		"next": [
+			"jp_smoke_基地OCR確認",
+			"jp_smoke_クリックのみ"
+		]
+	},
+
+	"jp_smoke_基地OCR確認": {
+		"recognition": "OCR",
+		"roi": [800, 180, 480, 540],
+		"expected": ["開発", "後方", "工廠", "宿舎", "DE", "RE"],
+		"action": "DoNothing",
+		"next": [
+			"jp_smoke_成功_基地"
+		]
+	},
+
+	"jp_smoke_成功_基地": {
+		"recognition": "DirectHit",
+		"action": "DoNothing",
+		"next": []
+	},
+
+	"jp_smoke_クリックのみ": {
+		"action": "Click",
+		"target": [640, 360, 1, 1],
+		"post_delay": 500,
+		"next": []
+	}
+}

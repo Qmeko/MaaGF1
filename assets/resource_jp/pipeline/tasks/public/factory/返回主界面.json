@@ -1,0 +1,44 @@
+﻿{
+	"!戻る主画面": {
+		"focus": {"Node.Recognition.Succeeded": "时间满足"},
+		"rate_limit": 5000,
+		"post_delay": 5000,
+		"timeout": 90000,
+		"next": [
+			"[JumpBack]後方支援",
+			"zdjz_開始",
+			"[JumpBack]戻る主画面_ESC"
+		]
+	},
+	"戻る主画面_识别主画面": {
+		"recognition": "OCR",
+		"roi": [911, 238, 141, 85],
+		"expected": ["開発", "RE"],
+		"post_delay": 7000,
+		"next": [
+			"戻る主画面_识别主画面1",
+			"[JumpBack]後方支援",
+			"[JumpBack]戻る主画面_ESC"
+		]
+	},
+	"戻る主画面_建造": {
+		"next": [
+			"戻る主画面_识别主画面1",
+			"[JumpBack]後方支援",
+			"[JumpBack]戻る主画面_ESC"
+		]
+	},
+	"戻る主画面_识别主画面1": {
+		"focus": {"Node.Recognition.Succeeded": "続行任务"},
+		"recognition": "OCR",
+		"roi": [911, 238, 141, 85],
+		"expected": ["開発", "RE"],
+		"next": []
+	},
+	"戻る主画面_ESC": {
+		"action": "Key",
+		"key": 27,
+		"post_delay": 4000,
+		"next": []
+	}
+}

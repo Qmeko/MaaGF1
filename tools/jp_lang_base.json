@@ -1,0 +1,18 @@
+{
+  "_MaaGfl1_Title": "MaaGfl1",
+  "_MaaGfl1_Description": "ドールズフロントライン Steam版（日本語）— MaaGF1 v2 タスク統合",
+  "_License_URL": "[MIT License](./LICENSE)",
+  "_Controller_Background": "バックグラウンド高性能",
+  "_Controller_Foreground": "フォアグラウンド",
+  "_Resource_JP": "日本語版 (Steam)",
+  "_Task_Smoke": "0.接続テスト",
+  "_Task_Smoke_Doc": "ゲームウィンドウが正しく接続できているか確認します。基地画面（開発・後方・工廠・宿舎タブ）で実行してください。",
+  "_Task_Dormitory": "1.基地 - 宿舎いいね",
+  "_Task_Dormitory_Doc": "戦友の宿舎を巡回し、いいね・バッテリー回収を行います。宿舎画面から実行してください。",
+  "_Task_134": "2.13-4周回（JP校正）",
+  "_Task_134_Doc": "13-4 を繰り返します。マップ最小ズーム。テンプレは resource_jp/image/combat/levelUp/13-4/ が必要です。",
+  "_Task_ReturnMain": "共通 - 主画面へ戻る",
+  "_Task_ReturnMain_Doc": "ESC を繰り返し押して基地画面まで戻ります。",
+  "_Option_134_Loops_Label": "周回数",
+  "_1_Experience_134_Label": "1.経験値 - 13-4 周回"
+}

@@ -1,0 +1,360 @@
+﻿{
+	"灰域_普通关卡_流程": {
+		"recognition": {
+			"type": "OCR",
+			"param": {
+				"expected": ["效能"],
+				"roi": [377, 333, 515, 64]
+			}
+		},
+		"action": {
+			"type": "DoNothing",
+			"param": {}
+		},
+		"next": [
+			{"name": "灰域_普通关卡_效能不足閉じる", "jump_back": true},
+			"灰域_普通关卡_地图重置"
+		]
+	},
+	"灰域_普通关卡_效能不足閉じる": {
+		"recognition": {
+			"type": "OCR",
+			"param": {
+				"expected": ["閉じる"],
+				"roi": [563, 494, 148, 57]
+			}
+		},
+		"action": {
+			"type": "LongPress",
+			"param": {"duration": 20}
+		}
+	},
+	"灰域_普通关卡_地图重置": {
+		"recognition": {
+			"type": "OCR",
+			"param": {
+				"expected": ["閉じる"],
+				"roi": [563, 494, 148, 57]
+			}
+		},
+		"action": {
+			"type": "DoNothing",
+			"param": {}
+		},
+		"inverse": true,
+		"next": [
+			"灰域_普通关卡_补给修理站",
+			"灰域_普通关卡_地图缩小"
+		]
+	},
+	"灰域_普通关卡_点击机场": {
+		"recognition": {
+			"type": "ColorMatch",
+			"param": {
+				"roi": "灰域_普通关卡_补给修理站",
+				"lower": [
+					[128, 165, 185]
+				],
+				"upper": [
+					[188, 225, 245]
+				],
+				"count": 20,
+				"roi_offset": [-364, 200, -20, -20]
+			}
+		},
+		"action": {
+			"type": "LongPress",
+			"param": {"duration": 20}
+		}
+	},
+	"灰域_普通关卡_梯队配置确定": {
+		"recognition": {
+			"type": "OCR",
+			"param": {
+				"expected": ["确定"],
+				"roi": [1141, 611, 92, 49]
+			}
+		},
+		"action": {
+			"type": "LongPress",
+			"param": {"duration": 20}
+		},
+		"post_wait_freezes": 100
+	},
+	"灰域_普通关卡_补给修理站": {
+		"recognition": {
+			"type": "TemplateMatch",
+			"param": {
+				"template": [
+					"./dlz_greyzone/补给修理站.png"
+				],
+				"roi": [692, 126, 275, 220],
+				"green_mask": true
+			}
+		},
+		"action": {
+			"type": "DoNothing",
+			"param": {}
+		},
+		"next": [
+			{"name": "灰域_普通关卡_梯队配置确定", "jump_back": true},
+			"灰域_普通关卡_梯队配置完毕",
+			{"name": "灰域_普通关卡_点击机场", "jump_back": true},
+			{"name": "灰域_普通关卡_梯队配置キャンセル", "jump_back": true}
+		]
+	},
+	"灰域_普通关卡_地图缩小": {
+		"recognition": {
+			"type": "DirectHit",
+			"param": {}
+		},
+		"action": "Scroll",
+		"target": [500, 500],
+		// Note: 理论上来说，应该使用`"dy": -120*N`的方式直接实现发送N次向下滑动，但是由于某种神秘力量(不知道为什么)，因此这里需要使用repeat*times的方式实现
+		"dy": -120,
+		"repeat": 100,
+		"pre_delay": 0,
+		"post_delay": 0,
+		"next": [
+			"灰域_普通关卡_地图左下角"
+		]
+	},
+	"灰域_普通关卡_梯队配置完毕": {
+		"recognition": {
+			"type": "ColorMatch",
+			"param": {
+				"roi": "灰域_普通关卡_补给修理站",
+				"lower": [
+					[179, 121, 0]
+				],
+				"upper": [
+					[255, 182, 39]
+				],
+				"count": 100,
+				"connected": true,
+				"roi_offset": [-332, 164, -19, -10]
+			}
+		},
+		"action": {
+			"type": "DoNothing",
+			"param": {}
+		},
+		"next": [
+			"灰域_普通关卡_代理中",
+			{"name": "灰域_代理作戦_確認", "jump_back": true},
+			{"name": "灰域_执行代理作戦", "jump_back": true}
+		]
+	},
+	"灰域_普通关卡_代理中": {
+		"recognition": {
+			"type": "ColorMatch",
+			"param": {
+				"roi": [1164, 29, 67, 46],
+				"lower": [
+					[197, 64, 18]
+				],
+				"upper": [
+					[237, 104, 58]
+				],
+				"count": 100
+			}
+		},
+		"action": {
+			"type": "DoNothing",
+			"param": {}
+		},
+		"next": [
+			"灰域_普通关卡_关卡结束",
+			"灰域_普通关卡_戦闘失败",
+			{"name": "灰域_普通关卡_作戦中", "jump_back": true},
+			"灰域_普通关卡_代理中"
+		]
+	},
+	"灰域_普通关卡_作戦中": {
+		"recognition": {
+			"type": "ColorMatch",
+			"param": {
+				"roi": [810, 98, 90, 45],
+				"lower": [
+					[197, 64, 18]
+				],
+				"upper": [
+					[237, 104, 58]
+				],
+				"count": 100
+			}
+		},
+		"action": {
+			"type": "DoNothing",
+			"param": {}
+		},
+		// 增加冗余时间, 避免重复
+		"post_delay": 200
+	},
+	"灰域_普通关卡_关卡结束": {
+		"recognition": {
+			"type": "ColorMatch",
+			"param": {
+				"roi": [1139, 115, 94, 58],
+				"lower": [
+					[197, 64, 18]
+				],
+				"upper": [
+					[237, 104, 58]
+				],
+				"count": 1000,
+				"connected": true
+			}
+		},
+		"action": {
+			"type": "DoNothing",
+			"param": {}
+		}
+	},
+	"灰域_普通关卡_地图左下角": {
+		"recognition": {
+			"type": "DirectHit",
+			"param": {}
+		},
+		"action": {
+			"type": "Swipe",
+			"param": {
+				"begin": [287, 484, 48, 47],
+				"end": [
+					[838, 120, 25, 23]
+				],
+				"duration": [200]
+			}
+		},
+		"next": [
+			"灰域_普通关卡_补给修理站"
+		]
+	},
+	"灰域_普通关卡_戦闘失败": {
+		"recognition": {
+			"type": "OCR",
+			"param": {
+				"expected": ["閉じる"],
+				"roi": [625, 494, 80, 55]
+			}
+		},
+		"action": {
+			"type": "DoNothing",
+			"param": {}
+		},
+		"next": [
+			{"name": "灰域_普通关卡_重新戦闘", "jump_back": true},
+			{"name": "灰域_普通关卡_戦闘失败閉じる", "jump_back": true},
+			"灰域_普通关卡_新戦闘"
+		]
+	},
+	"灰域_普通关卡_戦闘失败閉じる": {
+		"recognition": {
+			"type": "OCR",
+			"param": {
+				"expected": ["閉じる"],
+				"roi": [625, 494, 80, 55]
+			}
+		},
+		"action": {
+			"type": "LongPress",
+			"param": {"duration": 20}
+		}
+	},
+	"灰域_普通关卡_重新戦闘": {
+		"recognition": {
+			"type": "OCR",
+			"param": {
+				"expected": ["重新", "戦闘"],
+				"roi": [197, 5, 102, 37]
+			}
+		},
+		"action": {
+			"type": "LongPress",
+			"param": {"duration": 20}
+		}
+	},
+	"灰域_普通关卡_新戦闘": {
+		"recognition": {
+			"type": "OCR",
+			"param": {
+				"expected": ["重新", "戦闘"],
+				"roi": [197, 5, 102, 37]
+			}
+		},
+		"action": {
+			"type": "DoNothing",
+			"param": {}
+		},
+		"inverse": true,
+		"next": [
+			"灰域_普通关卡_流程",
+			{"name": "灰域_普通关卡_全体撤退", "jump_back": true},
+			{"name": "灰域_普通关卡_作戦暂停", "jump_back": true},
+			{"name": "灰域_终止代理_キャンセル", "jump_back": true},
+			{"name": "灰域_普通关卡_戦闘结算", "jump_back": true}
+		]
+	},
+	"灰域_普通关卡_全体撤退": {
+		"recognition": {
+			"type": "OCR",
+			"param": {
+				"expected": ["全体", "撤退"],
+				"roi": [336, 3, 149, 40]
+			}
+		},
+		"action": {
+			"type": "LongPress",
+			"param": {"duration": 20}
+		}
+	},
+	"灰域_普通关卡_作戦暂停": {
+		"recognition": {
+			"type": "ColorMatch",
+			"param": {
+				"roi": [619, 4, 47, 22],
+				"lower": [
+					[245, 171, 0]
+				],
+				"upper": [
+					[255, 191, 10]
+				],
+				"count": 20
+			}
+		},
+		"action": {
+			"type": "LongPress",
+			"param": {"duration": 20}
+		}
+	},
+	"灰域_普通关卡_戦闘结算": {
+		"recognition": {
+			"type": "OCR",
+			"param": {
+				"expected": ["结算"],
+				"roi": [13, 16, 187, 66]
+			}
+		},
+		"action": {
+			"type": "LongPress",
+			"param": {
+				"duration": 20,
+				"target": [812, 92, 142, 161]
+			}
+		}
+	},
+	"灰域_普通关卡_梯队配置キャンセル": {
+		"recognition": {
+			"type": "OCR",
+			"param": {
+				"expected": ["キャンセル"],
+				"roi": [1141, 611, 92, 49]
+			}
+		},
+		"action": {
+			"type": "LongPress",
+			"param": {"duration": 20}
+		},
+		"post_wait_freezes": 100
+	}
+}

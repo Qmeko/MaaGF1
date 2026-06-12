@@ -1,0 +1,122 @@
+{
+	"jp_134編隊_編成クリック": {
+		"roi": [141, 588, 231, 83],
+		"recognition": "OCR",
+		"expected": "編成",
+		"action": "LongPress",
+		"duration": 20,
+		"next": [
+			"jp_134編隊_2部隊選択",
+			"jp_134編隊_編成クリック"
+		]
+	},
+
+	"jp_134編隊_2部隊選択": {
+		"recognition": "OCR",
+		"expected": "陣形編成",
+		"roi": [1067, 634, 212, 85],
+		"target": [37, 203, 47, 33],
+		"action": "LongPress",
+		"duration": 20,
+		"post_wait_freezes": 1,
+		"next": [
+			"jp_134編隊_全表示",
+			"jp_134編隊_編成クリック",
+			"jp_134編隊_2部隊攻撃役選択"
+		]
+	},
+
+	"jp_134編隊_2部隊攻撃役選択": {
+		"target": [581, 351, 46, 78],
+		"action": "LongPress",
+		"duration": 20,
+		"post_wait_freezes": 1,
+		"next": [
+			"jp_134編隊_全表示",
+			"jp_134編隊_編成クリック"
+		]
+	},
+
+	"jp_134編隊_全表示": {
+		"recognition": "OCR",
+		"roi": [1044, 202, 207, 136],
+		"expected": ["全表示", "全部"],
+		"action": "LongPress",
+		"duration": 20,
+		"next": [
+			"jp_134編隊_お気に入り表示"
+		]
+	},
+
+	"jp_134編隊_お気に入り表示": {
+		"recognition": "OCR",
+		"roi": [830, 69, 243, 117],
+		"expected": ["お気に入り", "表示"],
+		"action": "LongPress",
+		"duration": 20,
+		"next": [
+			"jp_134編隊_お気に入り確認"
+		]
+	},
+
+	"jp_134編隊_お気に入り確認": {
+		"recognition": "OCR",
+		"expected": "確認",
+		"roi": [892, 628, 109, 69],
+		"action": "LongPress",
+		"duration": 20,
+		"next": [
+			"jp_134編隊_部隊内攻撃役クリック"
+		]
+	},
+
+	"jp_134編隊_部隊内攻撃役クリック": {
+		"target": [64, 636, 50, 41],
+		"action": "LongPress",
+		"duration": 20,
+		"post_delay": 200,
+		"next": [
+			"jp_134編隊_1部隊攻撃役クリック"
+		]
+	},
+
+	"jp_134編隊_1部隊攻撃役クリック": {
+		"recognition": "TemplateMatch",
+		"template": "combat/levelUp/13-4/G_team1.png",
+		"action": "LongPress",
+		"duration": 20,
+		"post_delay": 500,
+		"threshold": 0.8,
+		"green_mask": true,
+		"next": [
+			"jp_134編隊_確定"
+		]
+	},
+
+	"jp_134編隊_確定": {
+		"recognition": "OCR",
+		"roi": [1094, 591, 153, 93],
+		"expected": "確定",
+		"action": "LongPress",
+		"duration": 20,
+		"post_delay": 400,
+		"next": [
+			"jp_134編隊_確定",
+			"jp_134編隊_マップへ戻る"
+		]
+	},
+
+	"jp_134編隊_マップへ戻る": {
+		"recognition": "TemplateMatch",
+		"roi": [33, 0, 156, 166],
+		"template": "combat/levelUp/13-4/back2map.png",
+		"action": "LongPress",
+		"duration": 20,
+		"post_delay": 1500,
+		"next": [
+			"jp_134戦闘_作戦開始前初期化",
+			"jp_134編隊_マップへ戻る",
+			"[JumpBack]jp_134マップ_右上スワイプ"
+		]
+	}
+}

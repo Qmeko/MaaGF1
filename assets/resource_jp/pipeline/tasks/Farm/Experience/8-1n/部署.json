@@ -1,0 +1,223 @@
+﻿{
+	"81N配置_配置梯队": {
+		"recognition": "TemplateMatch",
+		"template": "combat/levelUp/8-1N/init.png",
+		"roi": [366, 361, 114, 117],
+		"threshold": 0.5,
+		"rate_limit": 100,
+		"post_delay": 1,
+		"pre_delay": 1,
+		"next": [
+			"81N配置_確認1队是否已配置",
+			"[JumpBack]81N配置_配置1队"
+		]
+	},
+	"81N配置_確認1队是否已配置": {
+		"recognition": "TemplateMatch",
+		"roi": [115, 488, 261, 231],
+		"threshold": 0.5,
+		"template": "combat/levelUp/8-1N/map_team1.png",
+		"next": [
+			"81N配置_確認2队是否已配置",
+			"[JumpBack]81N配置_配置2队"
+		],
+		"rate_limit": 20,
+		"post_delay": 1,
+		"pre_delay": 1
+	},
+	"81N配置_確認2队是否已配置": {
+		"recognition": "TemplateMatch",
+		"roi": [179, 78, 277, 233],
+		"threshold": 0.5,
+		"template": "combat/levelUp/8-1N/map_team2.png",
+		"next": [
+			"81N配置_確認3队是否已配置",
+			"[JumpBack]81N配置_选择狗粮"
+		],
+		"rate_limit": 20,
+		"post_delay": 1,
+		"pre_delay": 1
+	},
+	"81N配置_选择狗粮": {},
+	"81N配置_確認3队是否已配置": {
+		"recognition": "TemplateMatch",
+		"roi": [947, 101, 298, 316],
+		"threshold": 0.5,
+		"template": [
+			"combat/levelUp/8-1N/map_team3.png",
+			"combat/levelUp/8-1N/map_teamh.png"
+		],
+		"next": [
+			"81N配置_布置完了"
+		],
+		"rate_limit": 20,
+		"post_delay": 1,
+		"pre_delay": 1
+	},
+	"81N配置_確認重装是否已配置": {
+		"recognition": "TemplateMatch",
+		"roi": [947, 101, 298, 316],
+		"template": "combat/levelUp/8-1N/map_teamh.png",
+		"next": [
+			"81N配置_布置完了"
+		],
+		"rate_limit": 100,
+		"post_delay": 1
+	},
+	"81N配置_布置完了": {
+		"recognition": "TemplateMatch",
+		"roi": [179, 78, 277, 233],
+		"template": "combat/levelUp/8-1N/map_team2.png",
+		"rate_limit": 200,
+		"next": []
+	},
+	"81N配置_配置1队": {
+		"recognition": "TemplateMatch",
+		"roi": [115, 488, 261, 231],
+		"threshold": 0.5,
+		"template": "combat/levelUp/8-1N/port_1.png",
+		"action": "LongPress",
+		"duration": 20,
+		"post_delay": 500,
+		"next": [
+			"81N配置_配置1队确定",
+			"81N配置_配置1队"
+		]
+	},
+	"81N配置_配置1队确定": {
+		"recognition": "OCR",
+		"roi": [1071, 592, 192, 88],
+		"expected": ["确定", "キャンセル"],
+		"action": "LongPress",
+		"duration": 20,
+		"next": []
+	},
+	"81N配置_配置2队": {
+		"recognition": "TemplateMatch",
+		"roi": [179, 78, 277, 233],
+		"threshold": 0.5,
+		"template": "combat/levelUp/8-1N/port_2.png",
+		"action": "LongPress",
+		"duration": 50,
+		"pre_delay": 500,
+		"post_delay": 500,
+		"next": [
+			"81N配置_配置2队确定",
+			"81N配置_配置2队"
+		]
+	},
+	"81N配置_配置2队确定": {
+		"recognition": "OCR",
+		"roi": [1071, 592, 192, 88],
+		"expected": ["确定", "キャンセル"],
+		"action": "LongPress",
+		"duration": 20,
+		"next": []
+	},
+	"81N配置_配置3队": {
+		"recognition": "TemplateMatch",
+		"roi": [947, 101, 298, 316],
+		"threshold": 0.5,
+		"template": "combat/levelUp/8-1N/port_h.png",
+		"action": "LongPress",
+		"duration": 20,
+		"next": [
+			"81N配置_配置3队确定",
+			"[JumpBack]81N配置_重装机场选择梯队"
+		]
+	},
+	"81N配置_配置3队确定": {
+		"recognition": "OCR",
+		"roi": [1071, 592, 192, 88],
+		"expected": ["确定", "キャンセル"],
+		"action": "LongPress",
+		"duration": 20,
+		"post_delay": 1000
+	},
+	"81N配置_配置重装": {
+		"recognition": "TemplateMatch",
+		"roi": [947, 101, 298, 316],
+		"threshold": 0.6,
+		"template": "combat/levelUp/8-1N/port_h.png",
+		"action": "LongPress",
+		"duration": 20,
+		"next": [
+			"81N配置_配置重装选择",
+			"81N配置_配置重装",
+			"[JumpBack]81N配置_重装机场选择重装"
+		]
+	},
+	"81N配置_配置重装选择": {
+		"recognition": "OCR",
+		"expected": ["BGM", "AGS", "G", "等级"],
+		"roi": [673, 138, 165, 443],
+		"action": "LongPress",
+		"duration": 20,
+		"next": [
+			"81N配置_配置重装确定",
+			"81N配置_配置重装",
+			"[JumpBack]81N配置_重装机场选择梯队"
+		]
+	},
+	"81N配置_配置重装确定": {
+		"target": [1114, 631, 69, 37],
+		"action": "LongPress",
+		"duration": 20,
+		"post_delay": 1000
+	},
+	"81N配置_重装机场选择梯队": {
+		"target": [277, 78, 40, 25],
+		"action": "Click"
+	},
+	"81N配置_重装机场选择重装": {
+		"target": [560, 74, 59, 31],
+		"action": "Click"
+	},
+	"81N配置_弾薬检查": {
+		"recognition": "TemplateMatch",
+		"roi": [200, 50, 250, 250],
+		"template": [
+			"combat/levelUp/8-1N/map_team2.png"
+		],
+		"action": "LongPress",
+		"duration": 20,
+		"rate_limit": 200,
+		"threshold": 0.7,
+		"next": [
+			"81N配置_弾薬判断有",
+			"81N配置_弾薬判断无",
+			"81N配置_弾薬检查",
+			"[JumpBack]81N地图初始化_长按修正"
+		]
+	},
+	"81N配置_弾薬判断无": {
+		"recognition": "TemplateMatch",
+		"roi": [150, 489, 183, 99],
+		"template": "combat/levelUp/8-1N/Gnoammo.png",
+		"green_mask": true,
+		"threshold": 0.75,
+		"next": [
+			"81N配置_无弾薬不编成"
+		]
+	},
+	"81N配置_弾薬判断有": {
+		"recognition": "TemplateMatch",
+		"roi": [150, 489, 183, 99],
+		"template": "combat/levelUp/8-1N/Gfullammo.png",
+		"green_mask": true,
+		"threshold": 0.75,
+		"next": [
+			"81N編成_点击队伍编成"
+		]
+	},
+	"81N配置_无弾薬不编成": {
+		"recognition": "OCR",
+		"expected": ["キャンセル"],
+		"action": "LongPress",
+		"duration": 20,
+		"post_delay": 500,
+		"next": [
+			"81N戦闘_開始作戦前初始化"
+		]
+	}
+}

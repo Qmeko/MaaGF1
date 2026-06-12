@@ -1,0 +1,9 @@
+{
+  "skip_cn_entries": [
+    "!jp_接続テスト",
+    "!jp_宿舎いいね",
+    "!jp_134総流程",
+    "!jp_返回主界面"
+  ],
+  "window_regex": "(?i)(ドールズフロントライン|Dolls.?Frontline|GIRLS[\\s']*FRONTLINE|少女前線|少女前线)"
+}

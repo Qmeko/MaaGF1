@@ -1,0 +1,71 @@
+﻿{
+	"public_戻る戦闘界面": {
+		"recognition": "OCR",
+		"roi": [255, 9, 285, 86],
+		"expected": ["工廠", "開発", "梯队编成", "戦闘", "COMBAT"],
+		"next": [
+			"public_非戦闘界面",
+			"public_已进入戦闘"
+		]
+	},
+	"public_非戦闘界面": {
+		"recognition": "OCR",
+		"roi": [255, 9, 285, 86],
+		"expected": ["工廠", "開発", "梯队编成"],
+		"next": [
+			"public_导航栏戦闘",
+			"public_进入导航栏"
+		]
+	},
+	"public_进入导航栏": {
+		"recognition": "TemplateMatch",
+		"roi": [124, 18, 120, 105],
+		"template": "storage/navi.png",
+		"action": "LongPress",
+		"duration": 20,
+		"pre_delay": 800,
+		"post_wait_freezes": 200,
+		"next": [
+			"public_导航栏戦闘",
+			"public_进入导航栏"
+		]
+	},
+	"public_导航栏戦闘": {
+		"recognition": "TemplateMatch",
+		"roi": [80, 150, 150, 200],
+		"template": "storage/navi_combat.png",
+		"action": "LongPress",
+		"duration": 500,
+		"pre_delay": 1000,
+		"post_delay": 2000,
+		"next": [
+			"public_已进入戦闘",
+			"public_导航栏戦闘"
+		]
+	},
+	"public_已进入戦闘": {
+		"recognition": "OCR",
+		"roi": [247, 7, 195, 93],
+		"target": [1271, 687, 5, 29],
+		"expected": ["戦闘", "COMBAT"],
+		"action": "DoNothing",
+		"post_delay": 1000,
+		"next": []
+	},
+	"public_点击作戦任务": {
+		"recognition": "OCR",
+		"roi": [50, 106, 130, 613],
+		"expected": "作戦任务",
+		"action": "LongPress",
+		"duration": 20,
+		"next": []
+	},
+	"public_点击普通难度": {
+		"recognition": "OCR",
+		"roi": [50, 106, 130, 613],
+		"expected": ["普通", "NORMAL"],
+		"action": "LongPress",
+		"duration": 20,
+		"next": []
+	}
+}
