@@ -1,4 +1,4 @@
-﻿@echo off
+@echo off
 setlocal
 cd /d "%~dp0.."
 powershell -NoProfile -ExecutionPolicy Bypass -File "%CD%\tools\apply_jp_config.ps1" >nul 2>&1

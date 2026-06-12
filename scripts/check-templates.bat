@@ -1,5 +1,5 @@
 @echo off
-chcp 65001 >nul
+setlocal
 cd /d "%~dp0.."
-powershell -NoProfile -ExecutionPolicy Bypass -File ".\tools\check_templates.ps1"
+powershell -NoProfile -ExecutionPolicy Bypass -File "%CD%\tools\check_templates.ps1"
 pause
